@@ -1,0 +1,3 @@
+[submodule "externals/sdsl4py"]
+	path = externals/sdsl4py
+	url = https://github.com/algorithms-diicc/sdsl4py.git
