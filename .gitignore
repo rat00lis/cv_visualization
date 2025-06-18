@@ -1,1 +1,4 @@
 env/
+externals/
+integration_tests/__pycache__/
+integration_tests/output/
