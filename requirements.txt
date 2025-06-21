@@ -17,3 +17,5 @@ smmap==5.0.2
 tomli==2.2.1
 typing_extensions==4.14.0
 wrapt==1.17.2
+pandas
+matplotlib
