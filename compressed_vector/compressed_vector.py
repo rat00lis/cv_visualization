@@ -164,9 +164,11 @@ class CompressedVector:
             self.sign_part[index] = 2  # Special code for NaN (not 0 or 1)
             return
             
-        # Original code for normal values
-        int_part = int(abs(value))
-        dec_part = abs(value) - int_part
+        from decimal import Decimal
+
+        value_dec = Decimal(str(abs(value)))
+        int_part = int(value_dec)
+        dec_part = value_dec - int_part
         dec_part = round(dec_part, self.decimal_places)
         dec_part = int(dec_part * (10 ** self.decimal_places))
         sign_part = 1 if value >= 0 else 0
@@ -193,13 +195,15 @@ class CompressedVector:
         Returns:
             float: Reconstructed value with correct sign
         """
+        from decimal import Decimal
+        
         if self.sign_part[index] == 2:
             return float('nan')
-        value = (
-            self.integer_part[index]  # integer part
-            + self.decimal_part[index] / (10 ** self.decimal_places)  # decimal part
-        )
-        return value if self.sign_part[index] == 1 else -value  # sign part
+            
+        int_part = Decimal(self.integer_part[index])
+        dec_part = Decimal(self.decimal_part[index]) / (Decimal(10) ** self.decimal_places)
+        value = int_part + dec_part
+        return float(value if self.sign_part[index] == 1 else -value)
     
     def set_decompressed_config(self, get_decompressed):
         """

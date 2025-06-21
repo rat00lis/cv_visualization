@@ -10,7 +10,7 @@ import sdsl4py  # only if needed here
 RESULTS_FILE = os.path.join(os.path.dirname(__file__), "output", "compression_results.json")
 INT_WIDTH = 8
 DECIMAL_PLACES = 2
-VECTOR_SIZE = 10
+VECTOR_SIZE = 10000
 
 
 def get_test_vector(size=VECTOR_SIZE, decimal_places=DECIMAL_PLACES, int_width=INT_WIDTH):
@@ -107,3 +107,10 @@ def save_result(result):
         json.dump(results, f, indent=2)
 
     print(f"Results saved to {RESULTS_FILE}")
+
+if  __name__ == "__main__":
+    # Example usage
+    result = run_compression_method("Example Method", method=sdsl4py.dac_vector)
+    save_result(result)
+    print(f"Test vector: {get_test_vector()}")
+    print(f"Compression result: {result}")

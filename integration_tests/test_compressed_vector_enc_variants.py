@@ -1,10 +1,10 @@
 from common import run_compression_method, save_result
 import sdsl4py
 
-INT_WIDTH_ENC = 32
+INT_WIDTH_ENC = 64
 
 """
-    enc vectors cant use int_width under 32 bits, so we are hardcoding it to 32 bits.
+    enc vectors work weird with different integer widths, so we use a fixed width for these tests.
 """
 
 def test_enc_vector_elias_gamma():
