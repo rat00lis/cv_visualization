@@ -286,17 +286,19 @@ class CompressedVector:
     def size_in_bytes(self):
         """
         Return the size in bytes of the compressed vector.
-        """ 
+        Returns:
+            int: Total size in bytes of the compressed vector.
+        Raises:
+            ValueError: If the vector components are not initialized.
+        """
+        if self.integer_part is None or self.decimal_part is None or self.sign_part is None:
+            raise ValueError("You called size_in_bytes without creating the vectors or after destroying them. Call create_vector() first.")
+            
         total = (
                 # sdsl4py vectors
                 sdsl4py.size_in_bytes(self.integer_part) 
                 + sdsl4py.size_in_bytes(self.decimal_part)
                 + sdsl4py.size_in_bytes(self.sign_part)
-
-                # self attributes
-                + self.n_elements.__sizeof__()
-                + self.decimal_places.__sizeof__()
-                + self.current.__sizeof__()
                 )
         return total
     
