@@ -12,11 +12,25 @@ INT_WIDTH = 8
 DECIMAL_PLACES = 2
 VECTOR_SIZE = 10
 
-def get_test_vector(size=VECTOR_SIZE, decimal_places=DECIMAL_PLACES):
-    return np.round(np.random.uniform(-1, 1, size), decimal_places).tolist()
+
+def get_test_vector(size=VECTOR_SIZE, decimal_places=DECIMAL_PLACES, int_width=INT_WIDTH):
+    # Scale factor based on decimal precision
+    scale = 10 ** decimal_places
+
+    # Max value for decimal part that fits in given bit width
+    max_decimal = min(scale - 1, 2 ** int_width - 1)
+
+    # Generate random decimal values and integer parts
+    decimal_parts = np.random.randint(0, max_decimal + 1, size)
+    integer_parts = np.random.uniform(-1, 1, size).astype(int)
+
+    # Combine and round
+    vector = (integer_parts + decimal_parts / scale).round(decimal_places)
+    return vector.tolist()
+
 
 def run_compression_method(name, method=None, vector_size=VECTOR_SIZE, decimal_places=DECIMAL_PLACES, width=INT_WIDTH):
-    original_vector = get_test_vector(vector_size, decimal_places)
+    original_vector = get_test_vector(vector_size, decimal_places, width)
     original_size = sys.getsizeof(original_vector)
 
     cv = CompressedVector(int_width=width, decimal_places=decimal_places)
@@ -36,29 +50,27 @@ def run_compression_method(name, method=None, vector_size=VECTOR_SIZE, decimal_p
                 "size_bytes": 0,
                 "percentage": 0
             }
-    
+
+    # Decompression accuracy check
+    EPSILON = 10 ** -decimal_places
     for i in range(len(original_vector)):
-        print(cv[i], end=' ')
-    print(original_vector)
-    compressed_size = cv.size_in_bytes()
-    percentage = (compressed_size / original_size) * 100
-    print(f"{name}: {compressed_size:,} bytes ({percentage:.2f}% of original)")
-    # verify the compressed vector
-    for i in range(len(original_vector)):
-        if cv[i] != original_vector[i]:
+        if abs(cv[i] - original_vector[i]) > EPSILON:
             index = i
             expected = original_vector[i]
             got = cv[i]
+            size = cv.size_in_bytes()
             print(f"Error: Value mismatch at index {index}. Expected {expected}, got {got}")
             cv.destroy()
             return {
                 "name": name,
                 "success": False,
                 "error": f"Value mismatch at index {index}. Expected {expected}, got {got}",
-                "size_bytes": compressed_size,
-                "percentage": percentage
+                "size_bytes": size,
+                "percentage": (size / original_size) * 100
             }
-    
+
+    compressed_size = cv.size_in_bytes()
+    percentage = (compressed_size / original_size) * 100
     cv.destroy()
     return {
         "name": name,
@@ -72,6 +84,7 @@ def run_compression_method(name, method=None, vector_size=VECTOR_SIZE, decimal_p
         "width": width
     }
 
+
 def save_result(result):
     if os.path.exists(RESULTS_FILE):
         try:
@@ -82,18 +95,15 @@ def save_result(result):
     else:
         results = []
 
-    # Check if result with same name exists and replace it
     result_name = result["name"]
     for i, existing_result in enumerate(results):
         if existing_result.get("name") == result_name:
             results[i] = result
             break
     else:
-        # If no match was found, append the new result
         results.append(result)
 
     with open(RESULTS_FILE, 'w') as f:
         json.dump(results, f, indent=2)
 
     print(f"Results saved to {RESULTS_FILE}")
-
