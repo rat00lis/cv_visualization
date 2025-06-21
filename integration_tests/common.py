@@ -46,12 +46,15 @@ def run_compression_method(name, method=None, vector_size=VECTOR_SIZE, decimal_p
     # verify the compressed vector
     for i in range(len(original_vector)):
         if cv[i] != original_vector[i]:
-            print(f"Error: Value mismatch at index {i} for {name}. Expected {original_vector[i]}, got { cv[i]}")
+            index = i
+            expected = original_vector[i]
+            got = cv[i]
+            print(f"Error: Value mismatch at index {index}. Expected {expected}, got {got}")
             cv.destroy()
             return {
                 "name": name,
                 "success": False,
-                "error": f"Value mismatch at index {i} for {name}. Expected {original_vector[i]}, got { cv[i]}",
+                "error": f"Value mismatch at index {index}. Expected {expected}, got {got}",
                 "size_bytes": compressed_size,
                 "percentage": percentage
             }
@@ -94,8 +97,3 @@ def save_result(result):
 
     print(f"Results saved to {RESULTS_FILE}")
 
-if __name__ == "__main__":
-    # Example usage
-    result = run_compression_method("Example Method", method=sdsl4py.enc_vector_elias_gamma)
-    save_result(result)
-    print("Test completed and result saved.")
