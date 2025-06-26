@@ -8,7 +8,7 @@ class CompressedVector:
         decimal_places=0,
         int_width=64,
         dtype=float,
-        get_decompressed = True
+        get_decompressed = False
     ):
         """
         Initialize the CompressedVector with default values.

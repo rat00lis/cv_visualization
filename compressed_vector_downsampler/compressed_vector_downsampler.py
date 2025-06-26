@@ -7,17 +7,19 @@ import numpy as np
 
 class CompressedVectorDownsampler:
     def __init__(self):
+        self.x_indices = None
+        self.y_indices = None
         return
 
     def downsample(
-            self,
-            y=None,
-            x=None,
-            n_out=1000,
-            method="MinMaxLTTBDownsampler",
-            int_width=64,
-            decimal_places=4,
-            compress_method="vlc_vector_fibonacci"):
+        self,
+        y=None,
+        x=None,
+        n_out=1000,
+        method="MinMaxLTTBDownsampler",
+        int_width=64,
+        decimal_places=4,
+        compress_method="vlc_vector_fibonacci"):
         """
         Downsample a time series using the specified method and compress the result.
 
@@ -46,7 +48,10 @@ class CompressedVectorDownsampler:
         compress_method_selected = self._select_compression_method(compress_method)
 
         result = {}
-
+        
+        self.x_indices = indices if x is not None else None
+        self.y_indices = indices if y is not None else None
+        
         if x is not None:
             cv_x = CompressedVector(
                 int_width=int_width,
@@ -54,7 +59,9 @@ class CompressedVectorDownsampler:
                 get_decompressed=False
             )
             cv_x.create_vector(len(indices))
-            cv_x.fill_from_vector(x[indices])
+            # Convert x to numpy array if it's a list to support fancy indexing
+            x_array = np.array(x) if not isinstance(x, np.ndarray) else x
+            cv_x.fill_from_vector(x_array[indices])
             if compress_method_selected is not None:
                 cv_x.compress(compress_method_selected)
             result["x"] = cv_x
@@ -66,7 +73,9 @@ class CompressedVectorDownsampler:
                 get_decompressed=False
             )
             cv_y.create_vector(len(indices))
-            cv_y.fill_from_vector(y[indices])
+            # Convert y to numpy array if it's a list to support fancy indexing
+            y_array = np.array(y) if not isinstance(y, np.ndarray) else y
+            cv_y.fill_from_vector(y_array[indices])
             if compress_method_selected is not None:
                 cv_y.compress(compress_method_selected)
             result["y"] = cv_y
@@ -80,7 +89,22 @@ class CompressedVectorDownsampler:
             return result["x"]
 
 
-
+    def get_x_indices(self):
+        """
+        Get the x indices used in the last downsampling operation.
+        
+        :return: CompressedVector containing x indices or None if not available.
+        """
+        return self.x_indices
+    
+    def get_y_indices(self):
+        """
+        Get the y indices used in the last downsampling operation.
+        
+        :return: CompressedVector containing y indices or None if not available.
+        """
+        return self.y_indices
+    
     def set_get_decompressed(self, get_decompressed):
         """
         Set whether the CompressedVector should return decompressed values.
