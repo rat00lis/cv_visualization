@@ -4,30 +4,7 @@ import sdsl4py
 import tsdownsample as tsd
 import numpy as np
 
-
-DOWNSAMPLERS = {
-    "MinMaxLTTBDownsampler": tsd.MinMaxLTTBDownsampler,
-    "M4Downsampler": tsd.M4Downsampler,
-    "LTTBDownsampler": tsd.LTTBDownsampler,
-    "MinMaxDownsampler": tsd.MinMaxDownsampler,
-    "EveryNthDownsampler": tsd.EveryNthDownsampler,
-    "NaNM4Downsampler": tsd.NaNM4Downsampler,
-    "NaNMinMaxDownsampler": tsd.NaNMinMaxDownsampler,
-    "NaNMinMaxLTTBDownsampler": tsd.NaNMinMaxLTTBDownsampler,
-}
-
-COMPRESSION_METHODS = {
-    "enc_vector_elias_gamma": sdsl4py.enc_vector_elias_gamma,
-    "enc_vector_fibonacci": sdsl4py.enc_vector_fibonacci,
-    "enc_vector_comma_2": sdsl4py.enc_vector_comma_2,
-    "enc_vector_elias_delta": sdsl4py.enc_vector_elias_delta,
-    "vlc_vector_elias_delta": sdsl4py.vlc_vector_elias_delta,
-    "vlc_vector_elias_gamma": sdsl4py.vlc_vector_elias_gamma,
-    "vlc_vector_fibonacci": sdsl4py.vlc_vector_fibonacci,
-    "vlc_vector_comma_2": sdsl4py.vlc_vector_comma_2,
-    "No Compression": None,
-}
-
+from .available_methods import DOWNSAMPLERS, COMPRESSION_METHODS, list_available_downsamplers, list_available_compression_methods
 
 class CompressedVectorDownsampler:
     def __init__(self):
@@ -56,18 +33,17 @@ class CompressedVectorDownsampler:
         :param compress_method: Compression method to apply (name or function).
         :return: One or two CompressedVector instances depending on input.
         """
-        if x is None and y is None:
-            raise ValueError("At least one of 'x' or 'y' must be provided for downsampling.")
-
-        downsampler = self._select_downsampler(method)
+        self._handle_exceptions(y, x, n_out, method, int_width, decimal_places, compress_method)
+        downsampler_cls = self._select_downsampler(method)
+        ds_instance = downsampler_cls()  # instantiate once
 
         # Downsample based on inputs
-        if x is not None and y is not None:
-            indices = downsampler.downsample(x, y, n_out=n_out)
+        if x is not None and y is not None and not isinstance(ds_instance, tsd.EveryNthDownsampler):
+            indices = ds_instance.downsample(x, y, n_out=n_out)
         elif y is not None:
-            indices = downsampler.downsample(y, n_out=n_out)
+            indices = ds_instance.downsample(y, n_out=n_out)
         else:
-            indices = downsampler.downsample(x, n_out=n_out)
+            indices = ds_instance.downsample(x, n_out=n_out)
 
         compress_method_selected = self._select_compression_method(compress_method)
 
@@ -144,7 +120,7 @@ class CompressedVectorDownsampler:
             return downsampler
         if isinstance(downsampler, str):
             try:
-                return DOWNSAMPLERS[downsampler]()  # Instanciar
+                return DOWNSAMPLERS[downsampler]
             except KeyError:
                 raise ValueError(
                     f"Unknown downsampling method: '{downsampler}'. "
@@ -165,8 +141,23 @@ class CompressedVectorDownsampler:
                 )
         raise TypeError("compression method must be a string or a valid function.")
     
-    def list_available_downsamplers():
-        return list(DOWNSAMPLERS.keys())
-
-    def list_available_compression_methods():
-        return list(COMPRESSION_METHODS.keys())
+    def _handle_exceptions(self, y, x, n_out, method, int_width, decimal_places, compress_method):
+        if n_out <= 0:
+            raise ValueError("n_out must be a positive integer.")
+        if not isinstance(n_out, int):
+            raise TypeError("n_out must be an integer.")
+        if not isinstance(int_width, int) or int_width not in [8, 16, 32, 64]:
+            raise ValueError("int_width must be one of [8, 16, 32, 64].")
+        if not isinstance(decimal_places, int) or decimal_places < 0:
+            raise ValueError("decimal_places must be a non-negative integer.")
+        if not isinstance(method, (str)) and method not in DOWNSAMPLERS.values():
+            raise TypeError(f"Method {method} id not allowed. Method must be a string or a Downsampler instance.")
+        if not isinstance(compress_method, (str, type(None))) and not callable(compress_method):
+            raise TypeError("compress_method must be a string, None, or a callable function.")
+        if x is not None and n_out > len(x):
+            raise ValueError(f"n_out ({n_out}) cannot be greater than the length of x ({len(x)}).")
+        if y is not None and n_out > len(y):
+            raise ValueError(f"n_out ({n_out}) cannot be greater than the length of y ({len(y)}).")
+        if x is None and y is None:
+            raise ValueError("At least one of 'x' or 'y' must be provided for downsampling.")
+ 

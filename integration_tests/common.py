@@ -12,15 +12,43 @@ INT_WIDTH = 8
 DECIMAL_PLACES = 2
 VECTOR_SIZE = 10000
 
-def get_original_vector_and_decimal_places(width):
+import random
+
+def get_original_vector_and_decimal_places(width, vector_size=VECTOR_SIZE):
     if width <= 16:
-        original_vector = [-12.56, 0.01, 98.43, -42.0, 0.99]
+        # Low-precision: use small numbers and round to 2 decimal places
+        decimal_places = 2
+        base_values = [-12.56, 0.01, 98.43, -42.0, 0.99]
+        vector = base_values + [round(random.uniform(-100, 100), decimal_places) for _ in range(vector_size - len(base_values))]
+    else:
+        # High-precision: use larger and more precise numbers, rounded to 8 decimal places
+        decimal_places = 8
+        base_values = [1234.5678, 0.00012345, 98765.4321, 42.0, 0.99999999]
+        vector = base_values + [round(random.uniform(-1e5, 1e5), decimal_places) for _ in range(vector_size - len(base_values))]
+
+    return vector, decimal_places
+
+def get_original_vector_and_decimal_places_with_file(file_path, width):
+    """
+    Reads a vector from a file and returns it along with the decimal places.
+    The file should contain data with columns separated by semicolons (;).
+    This function extracts the values from column 1 (0-indexed).
+    """
+    with open(file_path, 'r') as f:
+        lines = f.readlines()
+    
+    vector = []
+    for line in lines:
+        columns = line.strip().split(';')
+        if len(columns) > 1:  # Ensure there's at least 2 columns
+            vector.append(float(columns[1]))  # Column 1 (0-indexed)
+    
+    if width <= 16:
         decimal_places = 2
     else:
-        original_vector = [1234.5678, 0.00012345, 98765.4321, 42.0, 0.99999999]
         decimal_places = 8
-    return original_vector, decimal_places
 
+    return vector, decimal_places
 
 def verify_compressed_vector(original_vector, decimal_places, compressed_vector):
     # Verify that the reconstructed values match the original values
@@ -31,6 +59,23 @@ def verify_compressed_vector(original_vector, decimal_places, compressed_vector)
 
     # Verify the size in bytes is greater than zero
     size_in_bytes = compressed_vector.size_in_bytes()
+    assert size_in_bytes > 0, "Size in bytes should be greater than zero"
+    print(f"Size in bytes: {size_in_bytes}")
+
+    # Verify that the compressed vector can be iterated over
+    for value in compressed_vector:
+        assert isinstance(value, float), "Value should be a float"
+        print(f"Value: {value}")
+
+def verify_not_compressed_vector(original_vector, decimal_places, compressed_vector):
+    # Verify that the reconstructed values match the original values
+    reconstructed_values = list(compressed_vector)
+    for original, reconstructed in zip(original_vector, reconstructed_values):
+        assert round(original, decimal_places) == round(reconstructed, decimal_places), \
+            f"Original: {original}, Reconstructed: {reconstructed}"
+
+    # Verify the size in bytes is greater than zero
+    size_in_bytes = sys.getsizeof(compressed_vector)
     assert size_in_bytes > 0, "Size in bytes should be greater than zero"
     print(f"Size in bytes: {size_in_bytes}")
 
