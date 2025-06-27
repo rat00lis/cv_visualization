@@ -1,9 +1,33 @@
 from compressed_vector import CompressedVector
-import tsdownsample
 import sdsl4py
 
 import tsdownsample as tsd
 import numpy as np
+
+
+DOWNSAMPLERS = {
+    "MinMaxLTTBDownsampler": tsd.MinMaxLTTBDownsampler,
+    "M4Downsampler": tsd.M4Downsampler,
+    "LTTBDownsampler": tsd.LTTBDownsampler,
+    "MinMaxDownsampler": tsd.MinMaxDownsampler,
+    "EveryNthDownsampler": tsd.EveryNthDownsampler,
+    "NaNM4Downsampler": tsd.NaNM4Downsampler,
+    "NaNMinMaxDownsampler": tsd.NaNMinMaxDownsampler,
+    "NaNMinMaxLTTBDownsampler": tsd.NaNMinMaxLTTBDownsampler,
+}
+
+COMPRESSION_METHODS = {
+    "enc_vector_elias_gamma": sdsl4py.enc_vector_elias_gamma,
+    "enc_vector_fibonacci": sdsl4py.enc_vector_fibonacci,
+    "enc_vector_comma_2": sdsl4py.enc_vector_comma_2,
+    "enc_vector_elias_delta": sdsl4py.enc_vector_elias_delta,
+    "vlc_vector_elias_delta": sdsl4py.vlc_vector_elias_delta,
+    "vlc_vector_elias_gamma": sdsl4py.vlc_vector_elias_gamma,
+    "vlc_vector_fibonacci": sdsl4py.vlc_vector_fibonacci,
+    "vlc_vector_comma_2": sdsl4py.vlc_vector_comma_2,
+    "No Compression": None,
+}
+
 
 class CompressedVectorDownsampler:
     def __init__(self):
@@ -115,88 +139,34 @@ class CompressedVectorDownsampler:
             raise TypeError("get_decompressed must be a boolean value.")
         CompressedVector.set_decompressed_config(get_decompressed)
 
+    def _select_downsampler(self, downsampler):
+        if hasattr(downsampler, 'downsample'):  # Ya es una instancia
+            return downsampler
+        if isinstance(downsampler, str):
+            try:
+                return DOWNSAMPLERS[downsampler]()  # Instanciar
+            except KeyError:
+                raise ValueError(
+                    f"Unknown downsampling method: '{downsampler}'. "
+                    f"Available: {', '.join(DOWNSAMPLERS)}"
+                )
+        raise TypeError("downsampler must be a string or a downsampler instance.")
+    
     def _select_compression_method(self, method):
-        """
-        Resolves the compression method from a string or directly returns the function if already valid.
-        
-        :param method: Either a string with the method name or a compression function (or None).
-        :return: A function or None (for "No Compression").
-        """
-        known_methods = {
-            "enc_vector_elias_gamma": sdsl4py.enc_vector_elias_gamma,
-            "enc_vector_fibonacci": sdsl4py.enc_vector_fibonacci,
-            "enc_vector_comma_2": sdsl4py.enc_vector_comma_2,
-            "enc_vector_elias_delta": sdsl4py.enc_vector_elias_delta,
-            "vlc_vector_elias_delta": sdsl4py.vlc_vector_elias_delta,
-            "vlc_vector_elias_gamma": sdsl4py.vlc_vector_elias_gamma,
-            "vlc_vector_fibonacci": sdsl4py.vlc_vector_fibonacci,
-            "vlc_vector_comma_2": sdsl4py.vlc_vector_comma_2,
-            "No Compression": None,
-        }
-
-        if method in known_methods.values() or method is None:
+        if method in COMPRESSION_METHODS.values() or method is None:
             return method
-
         if isinstance(method, str):
-            if method in known_methods:
-                return known_methods[method]
-            else:
+            try:
+                return COMPRESSION_METHODS[method]
+            except KeyError:
                 raise ValueError(
                     f"Unknown compression method: '{method}'. "
-                    f"Available methods are: {', '.join(known_methods.keys())}"
+                    f"Available: {', '.join(COMPRESSION_METHODS)}"
                 )
+        raise TypeError("compression method must be a string or a valid function.")
+    
+    def list_available_downsamplers():
+        return list(DOWNSAMPLERS.keys())
 
-        raise TypeError("method must be either a string or a valid compression function")
-
-
-    def _select_downsampler(self, downsampler):
-        """
-        Returns the appropriate downsampler instance.
-        If `downsampler` is an instance of a known downsampler, return it as is.
-        If it's a string, instantiate and return the corresponding downsampler.
-
-        :param downsampler: Either a string with the name of the method or a downsampler instance.
-        :return: A downsampler instance.
-        """
-        known_classes = (
-            tsd.EveryNthDownsampler,
-            tsd.LTTBDownsampler,
-            tsd.M4Downsampler,
-            tsd.MinMaxDownsampler,
-            tsd.MinMaxLTTBDownsampler,
-            tsd.NaNM4Downsampler,
-            tsd.NaNMinMaxDownsampler,
-            tsd.NaNMinMaxLTTBDownsampler,
-        )
-
-        if isinstance(downsampler, known_classes):
-            return downsampler
-
-        if isinstance(downsampler, str):
-            match downsampler:
-                case "MinMaxLTTBDownsampler":
-                    return tsd.MinMaxLTTBDownsampler()
-                case "M4Downsampler":
-                    return tsd.M4Downsampler()
-                case "LTTBDownsampler":
-                    return tsd.LTTBDownsampler()
-                case "MinMaxDownsampler":
-                    return tsd.MinMaxDownsampler()
-                case "EveryNthDownsampler":
-                    return tsd.EveryNthDownsampler()
-                case "NaNM4Downsampler":
-                    return tsd.NaNM4Downsampler()
-                case "NaNMinMaxDownsampler":
-                    return tsd.NaNMinMaxDownsampler()
-                case "NaNMinMaxLTTBDownsampler":
-                    return tsd.NaNMinMaxLTTBDownsampler()
-                case _:
-                    raise ValueError(
-                        f"Unknown downsampling method: '{downsampler}'. "
-                        "Available methods are: "
-                        "MinMaxLTTBDownsampler, M4Downsampler, LTTBDownsampler, "
-                        "MinMaxDownsampler, EveryNthDownsampler, NaNM4Downsampler, "
-                        "NaNMinMaxDownsampler, NaNMinMaxLTTBDownsampler"
-                    )
-
-        raise TypeError("downsampler must be either a string or a downsampler instance")
+    def list_available_compression_methods():
+        return list(COMPRESSION_METHODS.keys())
