@@ -5,3 +5,4 @@ integration_tests/output/*
 *__pycache__/
 benchmarking/output/
 .vscode/
+cv_visualization.egg-info/
