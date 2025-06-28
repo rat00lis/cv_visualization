@@ -274,3 +274,8 @@ Compression methods operate on these base integer vectors using SDSL codecs.
 
 ---
 
+# Areas of Improvement
+
+1. It would be great to be able to use common plotting libraries such as plotly or matplotlib (while mantaining the compressed vectors), but this would require a lot of effort.
+2. Add some kind of logic to use the best amount of decimal places, int width and compress method.
+3. For sure there are better ways to handle negative numbers that use less space.
