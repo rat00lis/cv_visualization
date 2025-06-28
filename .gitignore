@@ -3,3 +3,5 @@ externals/
 integration_tests/output/*
 !integration_tests/output/*.py
 *__pycache__/
+benchmarking/output/
+.vscode/
