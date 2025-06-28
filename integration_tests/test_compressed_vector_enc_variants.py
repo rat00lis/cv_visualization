@@ -1,4 +1,4 @@
-from common import run_compression_method, save_result
+from utils import run_compression_method, save_result
 import sdsl4py
 
 INT_WIDTH_ENC = 64

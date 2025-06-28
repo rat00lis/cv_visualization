@@ -1,6 +1,6 @@
 import numpy as np
 from compressed_vector import CompressedVector
-from common import get_original_vector_and_decimal_places, verify_compressed_vector
+from utils import get_original_vector_and_decimal_places, verify_compressed_vector
 import sdsl4py
 
 def test_int_vector_64():

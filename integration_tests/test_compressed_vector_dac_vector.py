@@ -1,4 +1,4 @@
-from common import run_compression_method, save_result
+from utils import run_compression_method, save_result
 import sdsl4py
 
 def test_dac_vector():

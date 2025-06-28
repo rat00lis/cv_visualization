@@ -1,4 +1,4 @@
-from common import run_compression_method, save_result
+from utils import run_compression_method, save_result
 
 def test_no_compression():
     result = run_compression_method("No Compression", None)

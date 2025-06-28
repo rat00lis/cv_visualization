@@ -1,5 +1,5 @@
-from compressed_vector_downsampler.available_methods import DOWNSAMPLERS, COMPRESSION_METHODS
-from common import get_original_vector_and_decimal_places_with_file, verify_compressed_vector, verify_not_compressed_vector
+from common.available_methods import DOWNSAMPLERS, COMPRESSION_METHODS
+from utils import get_original_vector_and_decimal_places_with_file, verify_compressed_vector, verify_not_compressed_vector
 from benchmarking.input_handler import InputHandler as ih
 import numpy as np
 import pytest
