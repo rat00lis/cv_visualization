@@ -21,7 +21,8 @@ def default_config():
             "option": "Title 03",
             "input_type": "compressed_vector_downsampler",
             "downsampler": "LTTBDownsampler",
-            "compress_option": "enc_vector_elias_gamma"
+            "compress_option": "enc_vector_elias_gamma",
+            "n_out": 1000
         },
         {
             "option": "Title 04",
