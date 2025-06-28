@@ -327,3 +327,26 @@ def test_compress_vlc_vector_comma_2():
     for i, value in enumerate(cv):
         assert round(value, decimal_places) == round(original_vector[i], decimal_places), \
             f"Compressed value {value} does not match original {original_vector[i]}"
+        
+
+def test_build_from_file():
+    original_vector, decimal_places = get_original_vector_and_decimal_places(64)
+    # Create the compressed vector
+    cv = CompressedVector(decimal_places, 64)
+    cv.create_vector(len(original_vector))
+    
+    # Save the original vector to a file
+    np.savetxt('original_vector.csv', original_vector, delimiter=',')
+    
+    # Fill the compressed vector from the file
+    cv.build_from_file('original_vector.csv', column=0, delimiter=',')
+    
+    # assert size is correct
+    assert len(cv) == len(original_vector), "Compressed vector size does not match original vector size"
+    # Verify that the decompressed values match the original values
+    for i, value in enumerate(cv):
+        assert round(value, decimal_places) == round(original_vector[i], decimal_places), \
+            f"Decompressed value {value} does not match original {original_vector[i]}"
+        
+if __name__ == "__main__":
+    test_fill_from_file()

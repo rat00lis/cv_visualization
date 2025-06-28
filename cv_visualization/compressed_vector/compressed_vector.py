@@ -1,6 +1,7 @@
 import sdsl4py
 import math
 import numpy as np
+import operator
 from ..common.available_methods import COMPRESSION_METHODS
 class CompressedVector:
     def __init__(
@@ -148,7 +149,66 @@ class CompressedVector:
                 raise IndexError("Index out of range")
             
             self._insert_value(index, value)
+    
+    def __copy__(self):
+        new = CompressedVector(
+            decimal_places=self.decimal_places,
+            int_width=self.int_width,
+            get_decompressed=self.get_decompressed
+        )
+        new.create_vector(self.n_elements)
+        for i in range(self.n_elements):
+            new._insert_value(i, self._reconstruct_float_value(i))
+        return new
+    
+    def __add__(self, other):
+        result = self.__copy__()  # necesitarás implementar una copia si no la tenés
+        result += other
+        return result
 
+    def __iadd__(self, other):
+        return self._apply_operation(other, operator.add)
+
+    def __isub__(self, other):
+        return self._apply_operation(other, operator.sub)
+
+    def __imul__(self, other):
+        return self._apply_operation(other, operator.mul)
+
+    def __itruediv__(self, other):
+        return self._apply_operation(other, operator.truediv)
+
+    def __ipow__(self, other):
+        return self._apply_operation(other, operator.pow)
+
+
+    def _apply_operation(self, other, op):
+        if isinstance(other, (int, float)):
+            for i in range(self.n_elements):
+                value = op(self._reconstruct_float_value(i), other)
+                self._insert_value(i, value)
+        elif isinstance(other, (list, np.ndarray)):
+            if len(other) != self.n_elements:
+                raise ValueError("Length mismatch in operation.")
+            for i in range(self.n_elements):
+                value = op(self._reconstruct_float_value(i), other[i])
+                self._insert_value(i, value)
+        else:
+            raise TypeError(f"Unsupported type for operation: {type(other)}")
+        return self
+
+    def select_compression_method(self, method):
+        if method in COMPRESSION_METHODS.values() or method is None:
+            return method
+        if isinstance(method, str):
+            try:
+                return COMPRESSION_METHODS[method]
+            except KeyError:
+                raise ValueError(
+                    f"Unknown compression method: '{method}'. "
+                    f"Available: {', '.join(COMPRESSION_METHODS)}"
+                )
+        raise TypeError("compression method must be a string or a valid function.")
 
     def _insert_value(self, index, value):
         """
@@ -259,7 +319,7 @@ class CompressedVector:
         self.n_elements = (end - start)
         self.current = 0
 
-    def fill_from_file(self, file_path, column=1, delimiter=";", truncate=None):
+    def build_from_file(self, file_path, column=1, delimiter=";", truncate=None):
         """
         Build the compressed vector from a specific column in a csv file.
         Args:
@@ -268,24 +328,27 @@ class CompressedVector:
             delimiter (str): The delimiter used in the csv file.
             truncate (int): The maximum number of rows to process. If None, process all rows.
         """
+        values = []
         with open(file_path, 'r') as file:
-            lines = file.readlines()
-            original_vector = []
-            for i, line in enumerate(lines):
-                if truncate is not None and i >= truncate:
-                    break
-                values = line.strip().split(delimiter)
-                if len(values) > column:
-                    value_to_add = values[column]
+            for line in file:
+                line_values = line.strip().split(delimiter)
+                if len(line_values) > column:
                     try:
-                        value_to_add = float(value_to_add)
-                        self.current += 1
-                        self._insert_value(self.current-1, value_to_add)
+                        values.append(float(line_values[column]))
                     except ValueError:
-                        print(f"Invalid value at line {i}: {value_to_add}")
-                    
-            self.n_elements = len(original_vector)
-            self.current = 0
+                        # Skip lines with non-numeric values in specified column
+                        continue
+                
+                # Check truncate limit
+                if truncate is not None and len(values) >= truncate:
+                    break
+        
+        # Create and fill the vector
+        self.create_vector(len(values))
+        for i, value in enumerate(values):
+            self._insert_value(i, value)
+            
+        self.n_elements = len(values)
     
     def size_in_bytes(self):
         """
@@ -307,22 +370,7 @@ class CompressedVector:
         return total
     
     def compress(self, vector_type=sdsl4py.enc_vector_elias_gamma):
-        if vector_type is None:
-            return
-        if vector_type not in COMPRESSION_METHODS.keys() and vector_type not in COMPRESSION_METHODS.values():
-            raise ValueError(f"Unsupported compression method: {vector_type}. Available methods: {list(COMPRESSION_METHODS.keys())}")
-        base_type = {
-            8: sdsl4py.int_vector_8,
-            16: sdsl4py.int_vector_16,
-            32: sdsl4py.int_vector_32,
-            64: sdsl4py.int_vector_64,
-        }[self.int_width]
-
-        def compress_part(part):
-            base = base_type(self.n_elements, 0)
-            for i in range(self.n_elements):
-                base[i] = part[i]
-            return vector_type(base)
+        compress_part = self.select_compression_method(vector_type)
 
         self.integer_part = compress_part(self.integer_part)
         self.decimal_part = compress_part(self.decimal_part)
