@@ -1,9 +1,10 @@
 import compressed_vector as cv
 import csv
 from compressed_vector_downsampler import CompressedVectorDownsampler as cvd
-from compressed_vector_downsampler import available_methods as am
+from common import available_methods as am
 import tsdownsample as tsd
 import numpy as np
+
 class InputHandler:
     def __init__(self):
         self.valid_input_types = ["default", "sdsl4py"]
@@ -102,7 +103,7 @@ class InputHandler:
         vec.create_vector(len(data))
         vec.fill_from_vector(data)
         vec.set_decompressed_config(decompressed)
-        if compress_option is not None:
+        if compress_option is not None and compress_option != "No Compression":
             compress_method = am.COMPRESSION_METHODS.get(compress_option, None)
             if compress_method is None:
                 raise ValueError(f"Unknown compression method: {compress_option}")
