@@ -3,15 +3,16 @@ from benchmarking.input_handler import InputHandler
 from cv_visualization import COMPRESSION_METHODS, DOWNSAMPLERS
 import pandas as pd
 import altair as alt
-import time
+import tracemalloc
 
-exp_name = "plot_altair"
+exp_name = "plot_altair_memory_allocation"
 exp = setup_experiment(exp_name)
 
 
 @exp.config
 def default_config():
-    n_outs = [100, 1000, 10000]
+    n_range = list(range(100, 3500, 100))
+    n_outs = [12, 44]
     cases = [
         {
             "option": "Original Data",
@@ -48,7 +49,7 @@ def run(cases, iterations, n_range, file_input_list, decimal_places, width, deco
     input_handler_instance = InputHandler()
 
     def experiment_fn(x, y, option):
-        start = time.perf_counter()
+        tracemalloc.start()
         df = pd.DataFrame({
             "x": x,
             "y": y
@@ -57,8 +58,9 @@ def run(cases, iterations, n_range, file_input_list, decimal_places, width, deco
                 x='x',
                 y='y'
             ).interactive()
-        end = time.perf_counter()
-        return end - start
+        current, peak = tracemalloc.get_traced_memory()
+        tracemalloc.stop()
+        return peak / 1024
 
     results = run_with_timing(input_handler_instance, experiment_fn, cases, n_range, file_input_list, decimal_places, iterations, width, decompressed)
     exp.log_scalar("num_cases", len(results))

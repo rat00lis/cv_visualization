@@ -4,7 +4,7 @@ from sacred.observers import FileStorageObserver
 from benchmarking.config import add_base_config, ROOT_OUTPUT_FOLDER
 import gc
 
-def setup_experiment(exp_name, config_overrides=None):
+def setup_experiment(exp_name):
     exp = Experiment(exp_name)
     exp.observers.append(FileStorageObserver.create(ROOT_OUTPUT_FOLDER + "/" + exp_name))
     add_base_config(exp)
@@ -69,4 +69,3 @@ def run_with_timing(input_handler_instance,
                 del y
                 gc.collect()
     return results
-

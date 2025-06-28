@@ -1,11 +1,11 @@
 from benchmarking.exp_runner import setup_experiment, run_with_timing
 from benchmarking.input_handler import InputHandler
 from cv_visualization import COMPRESSION_METHODS, DOWNSAMPLERS
-import pandas as pd
-import altair as alt
+import pygal as pg
 import time
 
-exp_name = "plot_altair"
+
+exp_name = "plot_pygal_memory_allocation"
 exp = setup_experiment(exp_name)
 
 
@@ -49,14 +49,12 @@ def run(cases, iterations, n_range, file_input_list, decimal_places, width, deco
 
     def experiment_fn(x, y, option):
         start = time.perf_counter()
-        df = pd.DataFrame({
-            "x": x,
-            "y": y
-        })
-        chart = alt.Chart(df).mark_line().encode(
-                x='x',
-                y='y'
-            ).interactive()
+
+        line_plot = pg.Line()
+        line_plot.title = 'Original vs Compressed Vector'
+        line_plot.x_labels = map(str, range(len(x)))
+        line_plot.add('Compressed', list(y))
+        
         end = time.perf_counter()
         return end - start
 
