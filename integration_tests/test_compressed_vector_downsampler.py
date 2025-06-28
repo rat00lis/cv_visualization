@@ -1,8 +1,8 @@
 import pytest
 import numpy as np
 
-from compressed_vector_downsampler import CompressedVectorDownsampler as cvd
-from common.available_methods import DOWNSAMPLERS, COMPRESSION_METHODS
+from cv_visualization import CompressedVectorDownsampler as cvd
+from cv_visualization import DOWNSAMPLERS, COMPRESSION_METHODS
 from utils import get_original_vector_and_decimal_places, verify_compressed_vector
 
 INT_WIDTH = 64

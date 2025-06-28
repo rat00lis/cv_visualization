@@ -1,5 +1,5 @@
 import numpy as np
-from compressed_vector import CompressedVector
+from cv_visualization import CompressedVector
 from utils import get_original_vector_and_decimal_places, verify_compressed_vector
 import sdsl4py
 

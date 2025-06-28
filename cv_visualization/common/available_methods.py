@@ -17,10 +17,12 @@ COMPRESSION_METHODS = {
     "enc_vector_fibonacci": sdsl4py.enc_vector_fibonacci,
     "enc_vector_comma_2": sdsl4py.enc_vector_comma_2,
     "enc_vector_elias_delta": sdsl4py.enc_vector_elias_delta,
+    "enc_vector_elias_gamma": sdsl4py.enc_vector_elias_gamma,
     "vlc_vector_elias_delta": sdsl4py.vlc_vector_elias_delta,
     "vlc_vector_elias_gamma": sdsl4py.vlc_vector_elias_gamma,
     "vlc_vector_fibonacci": sdsl4py.vlc_vector_fibonacci,
     "vlc_vector_comma_2": sdsl4py.vlc_vector_comma_2,
+    "dac_vector": sdsl4py.dac_vector,
     "No Compression": None,
 }
 

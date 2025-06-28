@@ -1,7 +1,7 @@
 from benchmarking.exp_runner import setup_experiment, run_with_timing
 from benchmarking.input_handler import InputHandler
 # ...existing code...
-from common.available_methods import COMPRESSION_METHODS, DOWNSAMPLERS
+from cv_visualization import COMPRESSION_METHODS, DOWNSAMPLERS
 import pandas as pd
 import altair as alt
 import time

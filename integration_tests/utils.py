@@ -3,7 +3,7 @@ import json
 import os
 from datetime import datetime
 import numpy as np
-from compressed_vector import CompressedVector
+from cv_visualization import CompressedVector
 
 import sdsl4py  # only if needed here
 

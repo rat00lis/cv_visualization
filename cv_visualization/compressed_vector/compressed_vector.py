@@ -1,7 +1,7 @@
 import sdsl4py
 import math
 import numpy as np
-from common.available_methods import COMPRESSION_METHODS
+from ..common.available_methods import COMPRESSION_METHODS
 class CompressedVector:
     def __init__(
         self,
