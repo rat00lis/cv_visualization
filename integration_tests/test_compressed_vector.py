@@ -348,5 +348,3 @@ def test_build_from_file():
         assert round(value, decimal_places) == round(original_vector[i], decimal_places), \
             f"Decompressed value {value} does not match original {original_vector[i]}"
         
-if __name__ == "__main__":
-    test_fill_from_file()
