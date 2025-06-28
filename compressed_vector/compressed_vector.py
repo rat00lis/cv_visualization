@@ -1,7 +1,7 @@
 import sdsl4py
 import math
 import numpy as np
-
+from common.available_methods import COMPRESSION_METHODS
 class CompressedVector:
     def __init__(
         self,
@@ -306,19 +306,29 @@ class CompressedVector:
                 )
         return total
     
-    def compress(self, vector_type=sdsl4py.int_vector_64):
-        """
-        Compress the vector using the specified vector type.
-        Args:
-            vector_type: The type of vector to use for compression.
-        """
-        if self.integer_part is None or self.decimal_part is None or self.sign_part is None:
-            raise ValueError("Vectors not created. Call create_vector() first.")
-        
-        # Create compressed vectors
-        self.integer_part = vector_type(self.integer_part)
-        self.decimal_part = vector_type(self.decimal_part)
-        self.sign_part = vector_type(self.sign_part)
+    def compress(self, vector_type=sdsl4py.enc_vector_elias_gamma):
+        if vector_type is None:
+            return
+        if vector_type not in COMPRESSION_METHODS.keys() and vector_type not in COMPRESSION_METHODS.values():
+            raise ValueError(f"Unsupported compression method: {vector_type}. Available methods: {list(COMPRESSION_METHODS.keys())}")
+        base_type = {
+            8: sdsl4py.int_vector_8,
+            16: sdsl4py.int_vector_16,
+            32: sdsl4py.int_vector_32,
+            64: sdsl4py.int_vector_64,
+        }[self.int_width]
+
+        def compress_part(part):
+            base = base_type(self.n_elements, 0)
+            for i in range(self.n_elements):
+                base[i] = part[i]
+            return vector_type(base)
+
+        self.integer_part = compress_part(self.integer_part)
+        self.decimal_part = compress_part(self.decimal_part)
+        self.sign_part = compress_part(self.sign_part)
+
+
 
     def destroy(self):
         """

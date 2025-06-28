@@ -1,2 +1,1 @@
 from .compressed_vector_downsampler import CompressedVectorDownsampler
-from .available_methods import DOWNSAMPLERS, COMPRESSION_METHODS, list_available_downsamplers, list_available_compression_methods

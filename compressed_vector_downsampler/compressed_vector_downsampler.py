@@ -4,7 +4,7 @@ import sdsl4py
 import tsdownsample as tsd
 import numpy as np
 
-from .available_methods import DOWNSAMPLERS, COMPRESSION_METHODS, list_available_downsamplers, list_available_compression_methods
+from common.available_methods import DOWNSAMPLERS, COMPRESSION_METHODS, list_available_downsamplers, list_available_compression_methods
 
 class CompressedVectorDownsampler:
     def __init__(self):
