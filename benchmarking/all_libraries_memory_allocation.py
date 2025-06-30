@@ -9,7 +9,7 @@ import altair as alt
 import pandas as pd
 import pygal as pg
 import numpy as np
-exp_name = "plot_pygal_memory_allocation"
+exp_name = "All Libraries Memory Allocation"
 exp = setup_experiment(exp_name)
 
 

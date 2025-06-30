@@ -5,7 +5,7 @@ import pandas as pd
 import altair as alt
 import time
 
-exp_name = "plot_altair"
+exp_name = "Altair Plot Time"
 exp = setup_experiment(exp_name)
 
 

@@ -5,12 +5,13 @@ import pandas as pd
 import altair as alt
 import tracemalloc
 
-exp_name = "plot_altair_memory_allocation"
+exp_name = "Altair Memory Allocation"
 exp = setup_experiment(exp_name)
 
 
 @exp.config
 def default_config():
+    measurement_unit = "kilobytes"
     n_range = list(range(100, 3500, 100))
     n_outs = [12, 44]
     cases = [

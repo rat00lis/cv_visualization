@@ -1,16 +1,16 @@
 from benchmarking.exp_runner import setup_experiment, run_with_timing
 from benchmarking.input_handler import InputHandler
-from cv_visualization import COMPRESSION_METHODS, DOWNSAMPLERS
-import pygal as pg
-import time
-
-
-exp_name = "PyGal Plot Time"
+from cv_visualization import COMPRESSION_METHODS, DOWNSAMPLERS, CompressedVector
+import numpy as np
+import pandas as pd
+import sys
+exp_name = "Comparison of Space Used"
 exp = setup_experiment(exp_name)
 
 
 @exp.config
 def default_config():
+    measurement_unit = "bytes"
     n_outs = [100, 1000, 10000]
     cases = [
         {
@@ -40,25 +40,27 @@ def default_config():
                     "downsampler": DOWNSAMPLERS[downsampler],
                     "n_out": n_out
                 })
-
-        
+    
 
 @exp.automain
-def run(cases, iterations, n_range, file_input_list, decimal_places, width, decompressed):
+def run(cases, iterations, n_range, file_input_list, decimal_places, width, decompressed, measurement_unit):
     input_handler_instance = InputHandler()
 
     def experiment_fn(x, y, option):
-        start = time.perf_counter()
+        size = -1
+        if isinstance(x, CompressedVector) and isinstance(y, CompressedVector):
+            size = x.size_in_bytes() + y.size_in_bytes()
+        elif isinstance(x, np.ndarray) and isinstance(y, np.ndarray):
+            size = x.nbytes + y.nbytes
+        elif isinstance(x, pd.DataFrame) and isinstance(y, pd.DataFrame):
+            size = x.memory_usage(deep=True).sum() + y.memory_usage(deep=True).sum()
+        elif isinstance(x, list) and isinstance(y, list):
+            size = sum(sys.getsizeof(item) for item in x) + sum(sys.getsizeof(item) for item in y)
+        else:
+            raise TypeError(f"Unsupported data types: {type(x)}, {type(y)}")
+        return size
 
-        line_plot = pg.Line()
-        line_plot.title = 'Original vs Compressed Vector'
-        line_plot.x_labels = map(str, range(len(x)))
-        line_plot.add('Compressed', list(y))
-        
-        end = time.perf_counter()
-        return end - start
-
-    results = run_with_timing(input_handler_instance, experiment_fn, cases, n_range, file_input_list, decimal_places, iterations, width, decompressed)
+    results = run_with_timing(input_handler_instance, experiment_fn, cases, n_range, file_input_list, decimal_places, iterations, width, decompressed, measurement_unit=measurement_unit)
     exp.log_scalar("num_cases", len(results))
     return results
 

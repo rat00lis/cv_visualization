@@ -18,6 +18,7 @@ FILE_INPUT_LIST = [
     # "input/dataset_bridge/d_08_1_1_9.txt",
     # "input/dataset_bridge/d_08_1_1_10.txt"
 ]
+MEASUREMENT_UNIT = "seconds"  # Default measurement unit for time-based experiments
 
 def add_base_config(exp):
     """
@@ -32,6 +33,7 @@ def add_base_config(exp):
         "column": COLUMN,
         "file_input_list": FILE_INPUT_LIST,
         "width": WIDTH,
-        "decompressed": DECOMPRESSED
+        "decompressed": DECOMPRESSED,
+        "measurement_unit": MEASUREMENT_UNIT
     })
 

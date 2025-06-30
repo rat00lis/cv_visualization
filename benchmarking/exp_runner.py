@@ -17,7 +17,8 @@ def run_with_timing(input_handler_instance,
                     decimal_places, 
                     iterations, 
                     width, 
-                    decompressed):
+                    decompressed,
+                    measurement_unit):
     results = {}
 
     for file_input in file_input_list:

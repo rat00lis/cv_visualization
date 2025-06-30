@@ -5,12 +5,13 @@ import pygal as pg
 import tracemalloc
 
 
-exp_name = "plot_pygal_memory_allocation"
+exp_name = "PyGal Memory Allocation"
 exp = setup_experiment(exp_name)
 
 
 @exp.config
 def default_config():
+    measurement_unit = "kilobytes"
     n_outs = [100, 1000, 10000]
     cases = [
         {
