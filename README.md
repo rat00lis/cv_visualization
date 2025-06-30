@@ -1,6 +1,4 @@
-Perfect! Here's an extensive English documentation draft for your Python library, `cv_visualization`. This version is structured and detailed enough to be used as a full README or docs page.
 
----
 
 # 📦 `cv_visualization` Documentation
 
