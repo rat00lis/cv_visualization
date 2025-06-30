@@ -29,44 +29,63 @@ def run_with_timing(input_handler_instance,
                 compress_option = case.get("compress_option", None)
                 downsampler = case.get("downsampler", None)
                 n_out = case.get("n_out", None)
-                
-                input_handler_instance.set_width(width, "y")
-                x, y = input_handler_instance.get_from_file(
-                    file_path = file_input,
-                    option = input_type,
-                    decimal_places= decimal_places,
-                    delimiter=";", 
-                    column=1, 
-                    truncate= n_size,
-                    decompressed=decompressed,
-                    compress_option=compress_option,
-                    downsampler=downsampler,
-                    n_out=n_out
-                )
-                if len(x) != len(y):
-                    raise ValueError(
-                        f"Length mismatch! {option=}, {file_input=}, {n_size=}, len(x)={len(x)}, len(y)={len(y)}"
+
+                try:
+                    input_handler_instance.set_width(width, "y")
+                    x, y = input_handler_instance.get_from_file(
+                        file_path=file_input,
+                        option=input_type,
+                        decimal_places=decimal_places,
+                        delimiter=";",
+                        column=1,
+                        truncate=n_size,
+                        decompressed=decompressed,
+                        compress_option=compress_option,
+                        downsampler=downsampler,
+                        n_out=n_out
                     )
 
-                differences = []
-                for _ in range(iterations):
-                    differences.append(experiment_fn(x, y, option))
+                    if len(x) != len(y):
+                        raise ValueError(
+                            f"Length mismatch! {option=}, {file_input=}, {n_size=}, len(x)={len(x)}, len(y)={len(y)}"
+                        )
 
-                clean_file_input = file_input.split("/")[-1].split(".")[0]
-                key = f"{clean_file_input}_{n_size}_{option}"
+                    differences = []
+                    for _ in range(iterations):
+                        differences.append(experiment_fn(x, y, option))
 
-                results[key] = {
-                    "option": option,
-                    "file:": clean_file_input,
-                    "n_size": n_size,
-                    "mean": statistics.mean(differences),
-                    "stdev": statistics.stdev(differences) if len(differences) > 1 else 0,
-                    "min": min(differences),
-                    "max": max(differences),
-                    "all_differences": differences,
-                    "iterations": iterations
-                }
-                del x
-                del y
-                gc.collect()
+                    clean_file_input = file_input.split("/")[-1].split(".")[0]
+                    key = f"{clean_file_input}_{n_size}_{option}"
+
+                    results[key] = {
+                        "option": option,
+                        "file:": clean_file_input,
+                        "n_size": n_size,
+                        "mean": statistics.mean(differences),
+                        "stdev": statistics.stdev(differences) if len(differences) > 1 else 0,
+                        "min": min(differences),
+                        "max": max(differences),
+                        "all_differences": differences,
+                        "iterations": iterations
+                    }
+
+                    del x
+                    del y
+                    gc.collect()
+
+                except Exception as e:
+                    print("💥 run_with_timing failed with:")
+                    print(f"  option = {option}")
+                    print(f"  input_type = {input_type}")
+                    print(f"  file_input = {file_input}")
+                    print(f"  n_size = {n_size}")
+                    print(f"  compress_option = {compress_option}")
+                    print(f"  downsampler = {downsampler}")
+                    print(f"  n_out = {n_out}")
+                    print(f"  decimal_places = {decimal_places}")
+                    print(f"  width = {width}")
+                    print(f"  iterations = {iterations}")
+                    print(f"  decompressed = {decompressed}")
+                    raise  # Re-raise to preserve original traceback
     return results
+
