@@ -23,7 +23,7 @@ def default_config():
     
 
 @exp.automain
-def run(cases, iterations, n_range, file_input_list, decimal_places, width, decompressed, measurement_unit):
+def run(cases, iterations, n_range, file_input_list, decimal_places, width, decompressed, measurement_unit, n_out):
     input_handler_instance = InputHandler()
 
     def experiment_fn(x, y, option):
@@ -53,7 +53,7 @@ def run(cases, iterations, n_range, file_input_list, decimal_places, width, deco
         return elapsed_time
 
 
-    results = run_with_timing(input_handler_instance, experiment_fn, cases, n_range, file_input_list, decimal_places, iterations, width, decompressed, measurement_unit=measurement_unit)
+    results = run_with_timing(input_handler_instance, experiment_fn, cases, n_range, file_input_list, decimal_places, iterations, width, decompressed, measurement_unit, n_out)
     exp.log_scalar("num_cases", len(results))
     return results
 

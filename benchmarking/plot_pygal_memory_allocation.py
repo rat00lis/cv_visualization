@@ -8,10 +8,10 @@ import tracemalloc
 exp_name = "PyGal Memory Allocation"
 exp = setup_experiment(exp_name)
 
-
 @exp.config
 def default_config():
     measurement_unit = "kilobytes"
+    iterations = 1 
     n_outs = [100, 1000, 10000]
     cases = [
         {
@@ -22,21 +22,21 @@ def default_config():
     for n_out in n_outs:
         for method in COMPRESSION_METHODS:
             cases.append({
-                "option": f"Compressed Vector - {method}",
+                "option": f"Compressed Vector - {method} - {n_out}",
                 "input_type": "compressed_vector",
                 "compress_option": method,
                 "n_out": n_out
             })
             for downsampler in DOWNSAMPLERS:
                 cases.append({
-                    "option": f"Compressed Vector Downsampler - {downsampler} - {method}",
+                    "option": f"Compressed Vector Downsampler - {downsampler} - {method} - {n_out}",
                     "input_type": "compressed_vector_downsampler",
                     "downsampler": DOWNSAMPLERS[downsampler],
                     "compress_option": method,
                     "n_out": n_out
                 })
                 cases.append({
-                    "option": f"TS Downsample - {downsampler}",
+                    "option": f"TS Downsample - {downsampler} - {n_out}",
                     "input_type": "tsdownsample",
                     "downsampler": DOWNSAMPLERS[downsampler],
                     "n_out": n_out
@@ -45,7 +45,7 @@ def default_config():
         
 
 @exp.automain
-def run(cases, iterations, n_range, file_input_list, decimal_places, width, decompressed):
+def run(cases, iterations, n_range, file_input_list, decimal_places, width, decompressed, measurement_unit, n_out):
     input_handler_instance = InputHandler()
 
     def experiment_fn(x, y, option):
@@ -60,7 +60,7 @@ def run(cases, iterations, n_range, file_input_list, decimal_places, width, deco
         tracemalloc.stop()
         return peak / 1024
 
-    results = run_with_timing(input_handler_instance, experiment_fn, cases, n_range, file_input_list, decimal_places, iterations, width, decompressed)
+    results = run_with_timing(input_handler_instance, experiment_fn, cases, n_range, file_input_list, decimal_places, iterations, width, decompressed, measurement_unit, n_out)
     exp.log_scalar("num_cases", len(results))
     return results
 

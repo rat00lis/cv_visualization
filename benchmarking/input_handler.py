@@ -7,7 +7,6 @@ import numpy as np
 
 class InputHandler:
     def __init__(self):
-        self.valid_input_types = ["default", "sdsl4py"]
         self.width_y = 64
         self.width_x = 64
         self.x_indices = None

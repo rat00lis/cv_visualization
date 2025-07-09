@@ -18,7 +18,8 @@ def run_with_timing(input_handler_instance,
                     iterations, 
                     width, 
                     decompressed,
-                    measurement_unit):
+                    measurement_unit,
+                    n_out=None):
     results = {}
 
     for file_input in file_input_list:
@@ -28,22 +29,31 @@ def run_with_timing(input_handler_instance,
                 input_type = case["input_type"]
                 compress_option = case.get("compress_option", None)
                 downsampler = case.get("downsampler", None)
-                n_out = case.get("n_out", None)
+                n_out = case.get("n_out", n_out)
 
                 try:
                     input_handler_instance.set_width(width, "y")
-                    x, y = input_handler_instance.get_from_file(
-                        file_path=file_input,
-                        option=input_type,
-                        decimal_places=decimal_places,
-                        delimiter=";",
-                        column=1,
-                        truncate=n_size,
-                        decompressed=decompressed,
-                        compress_option=compress_option,
-                        downsampler=downsampler,
-                        n_out=n_out
-                    )
+                    
+                    # Build parameters dictionary with required parameters
+                    params = {
+                        "file_path": file_input,
+                        "option": input_type,
+                        "decimal_places": decimal_places,
+                        "delimiter": ";",
+                        "column": 1,
+                        "truncate": n_size,
+                        "decompressed": decompressed
+                    }
+                    
+                    # Add optional parameters only if they are not None
+                    if n_out is not None:
+                        params["n_out"] = n_out
+                    if compress_option is not None:
+                        params["compress_option"] = compress_option
+                    if downsampler is not None:
+                        params["downsampler"] = downsampler
+                        
+                    x, y = input_handler_instance.get_from_file(**params)
 
                     if len(x) != len(y):
                         raise ValueError(
@@ -66,7 +76,9 @@ def run_with_timing(input_handler_instance,
                         "min": min(differences),
                         "max": max(differences),
                         "all_differences": differences,
-                        "iterations": iterations
+                        "iterations": iterations,
+                        "measurement_unit": measurement_unit,
+                        "n_out": n_out
                     }
 
                     del x

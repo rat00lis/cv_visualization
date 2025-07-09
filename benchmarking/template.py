@@ -33,13 +33,13 @@ def default_config():
     n_range = list(range(10000, 350000, 10000))
 
 @exp.automain
-def run(cases, iterations, n_range, file_input_list, decimal_places, width, decompressed):
+def run(cases, iterations, n_range, file_input_list, decimal_places, width, decompressed, measurement_unit, n_out):
     input_handler_instance = InputHandler()
 
     def experiment_fn(x, y, option):
         return
 
-    results = run_with_timing(input_handler_instance, experiment_fn, cases, n_range, file_input_list, decimal_places, iterations, width, decompressed)
+    results = run_with_timing(input_handler_instance, experiment_fn, cases, n_range, file_input_list, decimal_places, iterations, width, decompressed, measurement_unit, n_out)
     exp.log_scalar("num_cases", len(results))
     return results
 
