@@ -40,75 +40,72 @@ def run(cases, iterations, n_range, file_input_list, decimal_places, width, deco
     def experiment_fn(x, y, option):
         start = time.perf_counter()
 
-        match option:
-            case str() if option.startswith("Compressed Vector - "):
-                method = option.removeprefix("Compressed Vector - ")
-                compress_fn = COMPRESSION_METHODS.get(method)
-                if compress_fn is None:
-                    x_out = x
-                    y_out = y
+        if isinstance(option, str) and option.startswith("Compressed Vector - "):
+            method = option.removeprefix("Compressed Vector - ")
+            compress_fn = COMPRESSION_METHODS.get(method)
+            if compress_fn is None:
+            x_out = x
+            y_out = y
+            else:
+            cv_x = CompressedVector(int_width=width, decimal_places=decimal_places)
+            cv_x.create_vector(len(x))
+            cv_x.fill_from_vector(x)
+            cv_x.compress(compress_fn)
 
-                else:
-                    cv_x = CompressedVector(int_width=width, decimal_places=decimal_places)
-                    cv_x.create_vector(len(x))
-                    cv_x.fill_from_vector(x)
-                    cv_x.compress(compress_fn)
+            cv_y = CompressedVector(int_width=width, decimal_places=decimal_places)
+            cv_y.create_vector(len(y))
+            cv_y.fill_from_vector(y)
+            cv_y.compress(compress_fn)
 
-                    cv_y = CompressedVector(int_width=width, decimal_places=decimal_places)
-                    cv_y.create_vector(len(y))
-                    cv_y.fill_from_vector(y)
-                    cv_y.compress(compress_fn)
+            x_out, y_out = cv_x, cv_y
 
-                    x_out, y_out = cv_x, cv_y
+        elif isinstance(option, str) and option.startswith("SDSL4PY Vector - "):
+            method = option.removeprefix("SDSL4PY Vector - ")
+            compress_fn = COMPRESSION_METHODS.get(method)
+            if compress_fn is None:
+            x_out = x
+            y_out = y
+            else:
+            sdsl4py_x = sdsl4py.int_vector(len(x), int_width=width)
+            for i in range(len(x)):
+                sdsl4py_x[i] = abs(int(x[i]))
+            sdsl4py_x_c = compress_fn(sdsl4py_x)
 
-            case str() if option.startswith("SDSL4PY Vector - "):
-                method = option.removeprefix("SDSL4PY Vector - ")
-                compress_fn = COMPRESSION_METHODS.get(method)
-                if compress_fn is None:
-                    x_out = x
-                    y_out = y
-                else:
-                    sdsl4py_x = sdsl4py.int_vector(len(x), int_width=width)
-                    for i in range(len(x)):
-                        sdsl4py_x[i] = abs(int(x[i]))
-                    sdsl4py_x_c = compress_fn(sdsl4py_x)
+            sdsl4py_y = sdsl4py.int_vector(len(y), int_width=width)
+            for i in range(len(y)):
+                sdsl4py_y[i] = abs(int(y[i]))
+            sdsl4py_y_c = compress_fn(sdsl4py_y)
 
-                    sdsl4py_y = sdsl4py.int_vector(len(y), int_width=width)
-                    for i in range(len(y)):
-                        sdsl4py_y[i] = abs(int(y[i]))
-                    sdsl4py_y_c = compress_fn(sdsl4py_y)
+            x_out, y_out = sdsl4py_x_c, sdsl4py_y_c
 
-                    x_out, y_out = sdsl4py_x_c, sdsl4py_y_c
+        elif isinstance(option, str) and option.startswith("Compressed Vector Downsample - "):
+            method = option.removeprefix("Compressed Vector Downsample - ")
+            compress_fn = COMPRESSION_METHODS.get(method)
+            if compress_fn is None:
+            x_out = x
+            y_out = y
+            else:
+            x_out, y_out = CompressedVectorDownsampler().downsample(
+                x=x,
+                y=y,
+                #n out is 10% of the input length
+                n_out=int(len(x) * 0.1),
+                int_width=width,
+                decimal_places=decimal_places,
+                compress_method=compress_fn
+            )
 
-            case str() if option.startswith("Compressed Vector Downsample - "):
-                method = option.removeprefix("Compressed Vector Downsample - ")
-                compress_fn = COMPRESSION_METHODS.get(method)
-                if compress_fn is None:
-                    x_out = x
-                    y_out = y
-                
-                else:
-                    x_out, y_out = CompressedVectorDownsampler().downsample(
-                        x=x,
-                        y=y,
-                        #n out is 10% of the input length
-                        n_out=int(len(x) * 0.1),
-                        int_width=width,
-                        decimal_places=decimal_places,
-                        compress_method=compress_fn
-                    )
+        elif isinstance(option, str) and option.startswith("TS Downsample - "):
+            ds_instance = tsdownsample.MinMaxLTTBDownsampler()
+            n_out = int(len(x) * 0.1)
 
-            case str() if option.startswith("TS Downsample - "):
-                ds_instance = tsdownsample.MinMaxLTTBDownsampler()
-                n_out = int(len(x) * 0.1)
+            indices = ds_instance.downsample(x, y, n_out=n_out)
 
-                indices = ds_instance.downsample(x, y, n_out=n_out)
+            x_out = [x[i] for i in indices]
+            y_out = [y[i] for i in indices]
 
-                x_out = [x[i] for i in indices]
-                y_out = [y[i] for i in indices]
-
-            case _:
-                raise ValueError(f"Unknown option format: {option}")
+        else:
+            raise ValueError(f"Unknown option format: {option}")
 
         df = pd.DataFrame({
             "x": x_out,

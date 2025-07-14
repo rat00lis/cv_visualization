@@ -11,7 +11,7 @@ exp = setup_experiment(exp_name)
 
 @exp.config
 def default_config():
-    n_outs = [100, 1000]
+    n_outs = [1000]
     cases = [
         {
             "option": "Original Data",

@@ -12,7 +12,7 @@ exp = setup_experiment(exp_name)
 def default_config():
     measurement_unit = "kilobytes"
     iterations = 1 
-    n_outs = [100, 1000, 10000]
+    n_outs = [1000]
     cases = [
         {
             "option": "Original Data",

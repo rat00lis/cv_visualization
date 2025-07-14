@@ -56,43 +56,41 @@ class InputHandler:
                     x.append(float(row[0]))
                     y.append(float(row[column]))
 
-        match option:
-            case "default":
-                return x, y
+        if option == "default":
+            return x, y
+        elif option == "compressed_vector":
+            cx = self.compress_vector(x, decimal_places, self.width_x, decompressed, compress_option)
+            cy = self.compress_vector(y, decimal_places, self.width_y, decompressed, compress_option)
+            return cx, cy
+        elif option == "compressed_vector_downsampler":
+            cv_downsampler = cvd()
+            cx, cy = cv_downsampler.downsample(
+            y=y,
+            x=x,
+            n_out=n_out,
+            method=downsampler,
+            int_width=self.width_x,
+            decimal_places=decimal_places,
+            compress_method=compress_option
+            )
+            self.x_indices = cv_downsampler.get_x_indices()
+            self.y_indices = cv_downsampler.get_y_indices()
+            return cx, cy
+        elif option == "tsdownsample":
+            ds = downsampler()
+            if x is not None and not isinstance(ds, tsd.EveryNthDownsampler):
+                indices = ds.downsample(x, y, n_out=n_out)
+            else:
+                indices = ds.downsample(y, n_out=n_out)
 
-            case "compressed_vector":
-                cx = self.compress_vector(x, decimal_places, self.width_x, decompressed, compress_option)
-                cy = self.compress_vector(y, decimal_places, self.width_y, decompressed, compress_option)
-                return cx, cy
-            
-            case "compressed_vector_downsampler":
-                cv_downsampler = cvd()
-                cx, cy = cv_downsampler.downsample(
-                    y=y,
-                    x=x,
-                    n_out=n_out,
-                    method=downsampler,
-                    int_width=self.width_x,
-                    decimal_places=decimal_places,
-                    compress_method=compress_option
-                )
-                self.x_indices = cv_downsampler.get_x_indices()
-                self.y_indices = cv_downsampler.get_y_indices()
-                return cx, cy
-            
-            case "tsdownsample":
-                ds = downsampler()
-                if x is not None and not isinstance(ds, tsd.EveryNthDownsampler):
-                    indices = ds.downsample(x, y, n_out=n_out)
-                else:
-                    indices = ds.downsample(y, n_out=n_out)
-
-                indices = np.asarray(indices, dtype=np.int64)
-                x = np.asarray(x, dtype=np.float64) if x is not None else None
-                y = np.asarray(y, dtype=np.float64) if y is not None else None
-                self.x_indices = indices if x is not None else None
-                self.y_indices = indices if y is not None else None
-                return x[indices] if x is not None else None, y[indices]
+            indices = np.asarray(indices, dtype=np.int64)
+            x = np.asarray(x, dtype=np.float64) if x is not None else None
+            y = np.asarray(y, dtype=np.float64) if y is not None else None
+            self.x_indices = indices if x is not None else None
+            self.y_indices = indices if y is not None else None
+            return x[indices] if x is not None else None, y[indices]
+        else:
+            raise ValueError(f"Unknown option: {option}")
 
 
 

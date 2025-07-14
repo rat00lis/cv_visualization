@@ -278,18 +278,17 @@ class CompressedVector:
         Create the integer and decimal vectors.
         """
         self.n_elements = size
-        match self.int_width:
-            case 8:
-                self._create_vector(sdsl4py.int_vector_8)
-            case 16:
-                self._create_vector(sdsl4py.int_vector_16)
-            case 32:
-                self._create_vector(sdsl4py.int_vector_32)
-            case 64:
-                self._create_vector(sdsl4py.int_vector_64)
-            case _:
-                print(f"Unsupported int_width: {self.int_width}, defaulting to 64")
-                self._create_vector(sdsl4py.int_vector_64)
+        if self.int_width == 8:
+            self._create_vector(sdsl4py.int_vector_8)
+        elif self.int_width == 16:
+            self._create_vector(sdsl4py.int_vector_16)
+        elif self.int_width == 32:
+            self._create_vector(sdsl4py.int_vector_32)
+        elif self.int_width == 64:
+            self._create_vector(sdsl4py.int_vector_64)
+        else:
+            print(f"Unsupported int_width: {self.int_width}, defaulting to 64")
+            self._create_vector(sdsl4py.int_vector_64)
 
     
     def fill_from_vector(self, original_vector, start=0, end=None):
