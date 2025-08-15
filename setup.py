@@ -81,5 +81,14 @@ setup(
         "webencodings",
         "wrapt",
         "zipp",
+        "numpy",
+        "sacred",
+        "tsdownsample",
+        "pygal",
+        "pandas",
+        "matplotlib",
+        "plotly",
+        "altair",
+        "scipy"
     ],
 )

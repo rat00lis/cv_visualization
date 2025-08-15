@@ -4,16 +4,14 @@ from cv_visualization import COMPRESSION_METHODS, CompressedVector, CompressedVe
 import tsdownsample
 import sdsl4py
 import time
-import pandas as pd
-import altair as alt
+import pygal as pg
 
-exp_name = "Vega-Altair Plotting + Building Comparison"
+exp_name = "PyGal Plotting + Building Comparison"
 exp = setup_experiment(exp_name)
 
 
 @exp.config
 def default_config():
-    # iterations = 1
     cases = [
         {
             "option": "Original Data",
@@ -29,23 +27,21 @@ def default_config():
         "option": "TS Downsample",
         "input_type": "default"
     })
-    
+
 
 @exp.automain
 def run(cases, iterations, n_range, file_input_list, decimal_places, width, decompressed, measurement_unit, n_out):
     input_handler_instance = InputHandler()
 
     def experiment_fn(x, y, option):
-        start = 0  # Initialize start
+        start = time.perf_counter()
 
         if option == "Original Data":
-            start = time.perf_counter()
             # No processing, just use original data
             x_out = x
             y_out = y
 
         elif isinstance(option, str) and option.startswith("Compressed Vector - "):
-            start = time.perf_counter()
             method = option.removeprefix("Compressed Vector - ")
             compress_fn = COMPRESSION_METHODS.get(method)
             if compress_fn is None:
@@ -65,7 +61,6 @@ def run(cases, iterations, n_range, file_input_list, decimal_places, width, deco
                 x_out, y_out = cv_x, cv_y
 
         elif isinstance(option, str) and option.startswith("SDSL4PY Vector - "):
-            start = time.perf_counter()
             method = option.removeprefix("SDSL4PY Vector - ")
             compress_fn = COMPRESSION_METHODS.get(method)
             if compress_fn is None:
@@ -85,7 +80,6 @@ def run(cases, iterations, n_range, file_input_list, decimal_places, width, deco
                 x_out, y_out = sdsl4py_x_c, sdsl4py_y_c
 
         elif isinstance(option, str) and option.startswith("Compressed Vector Downsample - "):
-            start = time.perf_counter()
             method = option.removeprefix("Compressed Vector Downsample - ")
             compress_fn = COMPRESSION_METHODS.get(method)
             if compress_fn is None:
@@ -95,6 +89,7 @@ def run(cases, iterations, n_range, file_input_list, decimal_places, width, deco
                 x_out, y_out = CompressedVectorDownsampler().downsample(
                     x=x,
                     y=y,
+                    # n_out is 10% of the input length
                     n_out=1000,
                     int_width=width,
                     decimal_places=decimal_places,
@@ -102,7 +97,6 @@ def run(cases, iterations, n_range, file_input_list, decimal_places, width, deco
                 )
 
         elif isinstance(option, str) and option.startswith("TS Downsample"):
-            start = time.perf_counter()
             ds_instance = tsdownsample.MinMaxLTTBDownsampler()
             n_out = 1000
 
@@ -114,22 +108,15 @@ def run(cases, iterations, n_range, file_input_list, decimal_places, width, deco
         else:
             raise ValueError(f"Unknown option format: {option}")
 
-        df = pd.DataFrame({
-            "x": x_out,
-            "y": y_out
-        })
-        chart = alt.Chart(df).mark_line().encode(
-            x='x',
-            y='y'
-        ).interactive()
+        # Create PyGal line plot
+        line_plot = pg.Line()
+        line_plot.title = 'PyGal Plotting + Building Comparison'
+        line_plot.x_labels = map(str, range(len(x_out)))
+        line_plot.add('Data', list(y_out))
 
         end = time.perf_counter()
         return end - start
 
-
-
-
     results = run_with_timing(input_handler_instance, experiment_fn, cases, n_range, file_input_list, decimal_places, iterations, width, decompressed, measurement_unit, n_out)
     exp.log_scalar("num_cases", len(results))
     return results
-

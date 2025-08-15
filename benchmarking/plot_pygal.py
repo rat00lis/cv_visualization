@@ -11,36 +11,29 @@ exp = setup_experiment(exp_name)
 
 @exp.config
 def default_config():
-    n_outs = [1000]
+    measurement_unit = "kilobytes"
     cases = [
         {
             "option": "Original Data",
             "input_type": "default"
         }
     ]
-    for n_out in n_outs:
-        for method in COMPRESSION_METHODS:
+    for method in COMPRESSION_METHODS:
+        for downsampler in DOWNSAMPLERS:
             cases.append({
-                "option": f"Compressed Vector - {method} - {n_out}",
-                "input_type": "compressed_vector",
-                "compress_option": method,
-                "n_out": n_out
+                "option": f"Compressed Vector Downsampler - {downsampler} - {method}",
+                "input_type": "compressed_vector_downsampler",
+                "downsampler": DOWNSAMPLERS[downsampler],
+                "compress_option": method
             })
-            for downsampler in DOWNSAMPLERS:
-                cases.append({
-                    "option": f"Compressed Vector Downsampler - {downsampler} - {method} - {n_out}",
-                    "input_type": "compressed_vector_downsampler",
-                    "downsampler": DOWNSAMPLERS[downsampler],
-                    "compress_option": method,
-                    "n_out": n_out
-                })
-                cases.append({
-                    "option": f"TS Downsample - {downsampler} - {n_out}",
-                    "input_type": "tsdownsample",
-                    "downsampler": DOWNSAMPLERS[downsampler],
-                    "n_out": n_out
-                })
 
+        
+    for downsampler in DOWNSAMPLERS:
+        cases.append({
+            "option": f"TS Downsample - {downsampler}",
+            "input_type": "tsdownsample",
+            "downsampler": DOWNSAMPLERS[downsampler]
+        })
         
 
 @exp.automain
