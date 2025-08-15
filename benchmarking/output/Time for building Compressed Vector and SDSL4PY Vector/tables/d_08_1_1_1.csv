@@ -1,0 +1,101 @@
+n_size,option,measurement_unit,mean
+100000,Compressed Vector - No Compression,seconds,2.123415470123291e-07
+100000,Compressed Vector - dac_vector,seconds,0.3112221677787602
+100000,Compressed Vector - enc_vector_comma_2,seconds,0.30665309734952945
+100000,Compressed Vector - enc_vector_elias_delta,seconds,0.30844395572009187
+100000,Compressed Vector - enc_vector_elias_gamma,seconds,0.3086727506481111
+100000,Compressed Vector - enc_vector_fibonacci,seconds,0.3225574287741135
+100000,Compressed Vector - vlc_vector_comma_2,seconds,0.317699549269552
+100000,Compressed Vector - vlc_vector_elias_delta,seconds,0.3059803693400075
+100000,Compressed Vector - vlc_vector_elias_gamma,seconds,0.3037158271763474
+100000,Compressed Vector - vlc_vector_fibonacci,seconds,0.31236592166436217
+100000,SDSL4PY Vector - No Compression,seconds,1.824616144100825e-07
+100000,SDSL4PY Vector - dac_vector,seconds,0.028129813121631743
+100000,SDSL4PY Vector - enc_vector_comma_2,seconds,0.028728539605314532
+100000,SDSL4PY Vector - enc_vector_elias_delta,seconds,0.029067100988080106
+100000,SDSL4PY Vector - enc_vector_elias_gamma,seconds,0.027881225493426125
+100000,SDSL4PY Vector - enc_vector_fibonacci,seconds,0.034206127282232046
+100000,SDSL4PY Vector - vlc_vector_comma_2,seconds,0.029090320024018488
+100000,SDSL4PY Vector - vlc_vector_elias_delta,seconds,0.02847123631897072
+100000,SDSL4PY Vector - vlc_vector_elias_gamma,seconds,0.02854843493551016
+100000,SDSL4PY Vector - vlc_vector_fibonacci,seconds,0.029004773357883096
+10000,Compressed Vector - No Compression,seconds,1.802885284026464e-07
+10000,Compressed Vector - dac_vector,seconds,0.031798701438431935
+10000,Compressed Vector - enc_vector_comma_2,seconds,0.031634010809163254
+10000,Compressed Vector - enc_vector_elias_delta,seconds,0.0328119566043218
+10000,Compressed Vector - enc_vector_elias_gamma,seconds,0.03624074699667593
+10000,Compressed Vector - enc_vector_fibonacci,seconds,0.032584979524835946
+10000,Compressed Vector - vlc_vector_comma_2,seconds,0.03160298406146467
+10000,Compressed Vector - vlc_vector_elias_delta,seconds,0.03163664393747846
+10000,Compressed Vector - vlc_vector_elias_gamma,seconds,0.03136373997355501
+10000,Compressed Vector - vlc_vector_fibonacci,seconds,0.031857158771405616
+10000,SDSL4PY Vector - No Compression,seconds,2.1606683731079102e-07
+10000,SDSL4PY Vector - dac_vector,seconds,0.003382577033092578
+10000,SDSL4PY Vector - enc_vector_comma_2,seconds,0.003121115453541279
+10000,SDSL4PY Vector - enc_vector_elias_delta,seconds,0.0031430668352792662
+10000,SDSL4PY Vector - enc_vector_elias_gamma,seconds,0.0032989158605535823
+10000,SDSL4PY Vector - enc_vector_fibonacci,seconds,0.0035730311491837105
+10000,SDSL4PY Vector - vlc_vector_comma_2,seconds,0.00316676899480323
+10000,SDSL4PY Vector - vlc_vector_elias_delta,seconds,0.0031034137898435193
+10000,SDSL4PY Vector - vlc_vector_elias_gamma,seconds,0.003230186350022753
+10000,SDSL4PY Vector - vlc_vector_fibonacci,seconds,0.0030243619966010254
+200000,Compressed Vector - No Compression,seconds,2.4225252370039623e-07
+200000,Compressed Vector - dac_vector,seconds,0.602603444767495
+200000,Compressed Vector - enc_vector_comma_2,seconds,0.6095890919988354
+200000,Compressed Vector - enc_vector_elias_delta,seconds,0.6148061661204944
+200000,Compressed Vector - enc_vector_elias_gamma,seconds,0.6233850937647124
+200000,Compressed Vector - enc_vector_fibonacci,seconds,0.6450962756449977
+200000,Compressed Vector - vlc_vector_comma_2,seconds,0.6358490135055035
+200000,Compressed Vector - vlc_vector_elias_delta,seconds,0.6112317547357331
+200000,Compressed Vector - vlc_vector_elias_gamma,seconds,0.6131002714702238
+200000,Compressed Vector - vlc_vector_fibonacci,seconds,0.6254900516321261
+200000,SDSL4PY Vector - No Compression,seconds,1.7497998972733815e-07
+200000,SDSL4PY Vector - dac_vector,seconds,0.054361495080714424
+200000,SDSL4PY Vector - enc_vector_comma_2,seconds,0.057563214330002666
+200000,SDSL4PY Vector - enc_vector_elias_delta,seconds,0.05908070253208279
+200000,SDSL4PY Vector - enc_vector_elias_gamma,seconds,0.0582044403689603
+200000,SDSL4PY Vector - enc_vector_fibonacci,seconds,0.06807476324029267
+200000,SDSL4PY Vector - vlc_vector_comma_2,seconds,0.05887838330430289
+200000,SDSL4PY Vector - vlc_vector_elias_delta,seconds,0.05719427309619884
+200000,SDSL4PY Vector - vlc_vector_elias_gamma,seconds,0.056988248601555824
+200000,SDSL4PY Vector - vlc_vector_fibonacci,seconds,0.05788939151292046
+300000,Compressed Vector - No Compression,seconds,2.1246572335561116e-07
+300000,Compressed Vector - dac_vector,seconds,0.9029700280477603
+300000,Compressed Vector - enc_vector_comma_2,seconds,0.9151361150977512
+300000,Compressed Vector - enc_vector_elias_delta,seconds,0.9106776713393628
+300000,Compressed Vector - enc_vector_elias_gamma,seconds,0.9008789360678444
+300000,Compressed Vector - enc_vector_fibonacci,seconds,0.958630205054457
+300000,Compressed Vector - vlc_vector_comma_2,seconds,0.9298209877219051
+300000,Compressed Vector - vlc_vector_elias_delta,seconds,0.9099705900686482
+300000,Compressed Vector - vlc_vector_elias_gamma,seconds,0.9150669758052875
+300000,Compressed Vector - vlc_vector_fibonacci,seconds,0.9382493218251814
+300000,SDSL4PY Vector - No Compression,seconds,1.8840655684471131e-07
+300000,SDSL4PY Vector - dac_vector,seconds,0.08611429069812099
+300000,SDSL4PY Vector - enc_vector_comma_2,seconds,0.09429578672473629
+300000,SDSL4PY Vector - enc_vector_elias_delta,seconds,0.0926849802179883
+300000,SDSL4PY Vector - enc_vector_elias_gamma,seconds,0.09670451466615002
+300000,SDSL4PY Vector - enc_vector_fibonacci,seconds,0.10721555988614757
+300000,SDSL4PY Vector - vlc_vector_comma_2,seconds,0.08897454151883721
+300000,SDSL4PY Vector - vlc_vector_elias_delta,seconds,0.0940039202105254
+300000,SDSL4PY Vector - vlc_vector_elias_gamma,seconds,0.09261746085248887
+300000,SDSL4PY Vector - vlc_vector_fibonacci,seconds,0.10169815549937387
+50000,Compressed Vector - No Compression,seconds,1.6544945538043976e-07
+50000,Compressed Vector - dac_vector,seconds,0.15183606687933207
+50000,Compressed Vector - enc_vector_comma_2,seconds,0.15363964281665782
+50000,Compressed Vector - enc_vector_elias_delta,seconds,0.15227903419484695
+50000,Compressed Vector - enc_vector_elias_gamma,seconds,0.15561232205169898
+50000,Compressed Vector - enc_vector_fibonacci,seconds,0.15975838908925652
+50000,Compressed Vector - vlc_vector_comma_2,seconds,0.15762115746426086
+50000,Compressed Vector - vlc_vector_elias_delta,seconds,0.15202710862892369
+50000,Compressed Vector - vlc_vector_elias_gamma,seconds,0.15207967936682204
+50000,Compressed Vector - vlc_vector_fibonacci,seconds,0.15532086240127682
+50000,SDSL4PY Vector - No Compression,seconds,1.9532938798268635e-07
+50000,SDSL4PY Vector - dac_vector,seconds,0.013479858807598551
+50000,SDSL4PY Vector - enc_vector_comma_2,seconds,0.0151320554005603
+50000,SDSL4PY Vector - enc_vector_elias_delta,seconds,0.017023434319222968
+50000,SDSL4PY Vector - enc_vector_elias_gamma,seconds,0.015022405454268058
+50000,SDSL4PY Vector - enc_vector_fibonacci,seconds,0.01817778772674501
+50000,SDSL4PY Vector - vlc_vector_comma_2,seconds,0.014738654174531499
+50000,SDSL4PY Vector - vlc_vector_elias_delta,seconds,0.015125020453706384
+50000,SDSL4PY Vector - vlc_vector_elias_gamma,seconds,0.015601819893345237
+50000,SDSL4PY Vector - vlc_vector_fibonacci,seconds,0.015180807948733369

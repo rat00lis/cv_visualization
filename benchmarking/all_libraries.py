@@ -15,6 +15,7 @@ exp = setup_experiment(exp_name)
 
 @exp.config
 def default_config():
+    iterations = 30
     cases = [
         {
             "option": "MatPlotlib Line Plot",

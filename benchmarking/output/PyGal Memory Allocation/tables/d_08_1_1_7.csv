@@ -1,0 +1,496 @@
+n_size,option,measurement_unit,mean
+100000,Compressed Vector - No Compression - 1000,kilobytes,3144.9921875
+100000,Compressed Vector - dac_vector - 1000,kilobytes,3125.2744140625
+100000,Compressed Vector - enc_vector_comma_2 - 1000,kilobytes,3143.1875
+100000,Compressed Vector - enc_vector_elias_delta - 1000,kilobytes,3151.130859375
+100000,Compressed Vector - enc_vector_elias_gamma - 1000,kilobytes,3164.564453125
+100000,Compressed Vector - enc_vector_fibonacci - 1000,kilobytes,3159.3583984375
+100000,Compressed Vector - vlc_vector_comma_2 - 1000,kilobytes,3125.2744140625
+100000,Compressed Vector - vlc_vector_elias_delta - 1000,kilobytes,3125.2744140625
+100000,Compressed Vector - vlc_vector_elias_gamma - 1000,kilobytes,3125.2744140625
+100000,Compressed Vector - vlc_vector_fibonacci - 1000,kilobytes,3125.2744140625
+100000,Compressed Vector Downsampler - EveryNthDownsampler - No Compression - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - EveryNthDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - LTTBDownsampler - No Compression - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - LTTBDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.0478515625
+100000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - M4Downsampler - No Compression - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - M4Downsampler - dac_vector - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - M4Downsampler - enc_vector_comma_2 - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - M4Downsampler - enc_vector_elias_delta - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - M4Downsampler - enc_vector_elias_gamma - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - M4Downsampler - enc_vector_fibonacci - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_comma_2 - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_elias_delta - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_elias_gamma - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_fibonacci - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - MinMaxDownsampler - No Compression - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - MinMaxDownsampler - dac_vector - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_comma_2 - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_elias_delta - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_elias_gamma - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_fibonacci - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_comma_2 - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_elias_delta - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_fibonacci - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - No Compression - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.6806640625
+100000,Compressed Vector Downsampler - NaNM4Downsampler - No Compression - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - NaNM4Downsampler - dac_vector - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_comma_2 - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_elias_delta - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_elias_gamma - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_fibonacci - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_comma_2 - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_elias_delta - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_elias_gamma - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_fibonacci - 1000,kilobytes,20.6025390625
+100000,Compressed Vector Downsampler - NaNMinMaxDownsampler - No Compression - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - NaNMinMaxDownsampler - dac_vector - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_comma_2 - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_elias_delta - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_elias_gamma - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_fibonacci - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_comma_2 - 1000,kilobytes,19.1103515625
+100000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_elias_delta - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_fibonacci - 1000,kilobytes,19.5400390625
+100000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - No Compression - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.0712890625
+100000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+100000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+100000,Original Data,kilobytes,783.5830078125
+100000,TS Downsample - EveryNthDownsampler - 1000,kilobytes,33.552734375
+100000,TS Downsample - LTTBDownsampler - 1000,kilobytes,33.552734375
+100000,TS Downsample - M4Downsampler - 1000,kilobytes,22.677734375
+100000,TS Downsample - MinMaxDownsampler - 1000,kilobytes,21.615234375
+100000,TS Downsample - MinMaxLTTBDownsampler - 1000,kilobytes,33.552734375
+100000,TS Downsample - NaNM4Downsampler - 1000,kilobytes,22.677734375
+100000,TS Downsample - NaNMinMaxDownsampler - 1000,kilobytes,21.615234375
+100000,TS Downsample - NaNMinMaxLTTBDownsampler - 1000,kilobytes,33.552734375
+10000,Compressed Vector - No Compression - 1000,kilobytes,312.7744140625
+10000,Compressed Vector - dac_vector - 1000,kilobytes,312.7744140625
+10000,Compressed Vector - enc_vector_comma_2 - 1000,kilobytes,312.7744140625
+10000,Compressed Vector - enc_vector_elias_delta - 1000,kilobytes,312.7744140625
+10000,Compressed Vector - enc_vector_elias_gamma - 1000,kilobytes,312.7744140625
+10000,Compressed Vector - enc_vector_fibonacci - 1000,kilobytes,312.7744140625
+10000,Compressed Vector - vlc_vector_comma_2 - 1000,kilobytes,312.7744140625
+10000,Compressed Vector - vlc_vector_elias_delta - 1000,kilobytes,312.7744140625
+10000,Compressed Vector - vlc_vector_elias_gamma - 1000,kilobytes,312.7744140625
+10000,Compressed Vector - vlc_vector_fibonacci - 1000,kilobytes,312.7744140625
+10000,Compressed Vector Downsampler - EveryNthDownsampler - No Compression - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - EveryNthDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - LTTBDownsampler - No Compression - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - LTTBDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+10000,Compressed Vector Downsampler - M4Downsampler - No Compression - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - M4Downsampler - dac_vector - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - M4Downsampler - enc_vector_comma_2 - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - M4Downsampler - enc_vector_elias_delta - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - M4Downsampler - enc_vector_elias_gamma - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - M4Downsampler - enc_vector_fibonacci - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_comma_2 - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_elias_delta - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_elias_gamma - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_fibonacci - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - MinMaxDownsampler - No Compression - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxDownsampler - dac_vector - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_comma_2 - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_elias_delta - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_elias_gamma - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_fibonacci - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_comma_2 - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_elias_delta - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_fibonacci - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - No Compression - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - dac_vector - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_comma_2 - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_elias_delta - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_elias_gamma - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_fibonacci - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_comma_2 - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_elias_delta - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_fibonacci - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNM4Downsampler - No Compression - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - NaNM4Downsampler - dac_vector - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_comma_2 - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_elias_delta - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_elias_gamma - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_fibonacci - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_comma_2 - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_elias_delta - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_elias_gamma - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_fibonacci - 1000,kilobytes,12.7275390625
+10000,Compressed Vector Downsampler - NaNMinMaxDownsampler - No Compression - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxDownsampler - dac_vector - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_comma_2 - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_elias_delta - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_elias_gamma - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_fibonacci - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_comma_2 - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_elias_delta - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_fibonacci - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - No Compression - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - dac_vector - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_comma_2 - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_elias_delta - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_elias_gamma - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_fibonacci - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_comma_2 - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_elias_delta - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,12.5078125
+10000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_fibonacci - 1000,kilobytes,12.5078125
+10000,Original Data,kilobytes,80.4580078125
+10000,TS Downsample - EveryNthDownsampler - 1000,kilobytes,34.6513671875
+10000,TS Downsample - LTTBDownsampler - 1000,kilobytes,33.552734375
+10000,TS Downsample - M4Downsampler - 1000,kilobytes,14.802734375
+10000,TS Downsample - MinMaxDownsampler - 1000,kilobytes,12.5078125
+10000,TS Downsample - MinMaxLTTBDownsampler - 1000,kilobytes,12.5078125
+10000,TS Downsample - NaNM4Downsampler - 1000,kilobytes,14.802734375
+10000,TS Downsample - NaNMinMaxDownsampler - 1000,kilobytes,13.06640625
+10000,TS Downsample - NaNMinMaxLTTBDownsampler - 1000,kilobytes,12.5078125
+200000,Compressed Vector - No Compression - 1000,kilobytes,6250.2744140625
+200000,Compressed Vector - dac_vector - 1000,kilobytes,6269.9921875
+200000,Compressed Vector - enc_vector_comma_2 - 1000,kilobytes,6282.61328125
+200000,Compressed Vector - enc_vector_elias_delta - 1000,kilobytes,6296.3974609375
+200000,Compressed Vector - enc_vector_elias_gamma - 1000,kilobytes,6294.9013671875
+200000,Compressed Vector - enc_vector_fibonacci - 1000,kilobytes,6300.0283203125
+200000,Compressed Vector - vlc_vector_comma_2 - 1000,kilobytes,6250.2744140625
+200000,Compressed Vector - vlc_vector_elias_delta - 1000,kilobytes,6249.7978515625
+200000,Compressed Vector - vlc_vector_elias_gamma - 1000,kilobytes,6250.2744140625
+200000,Compressed Vector - vlc_vector_fibonacci - 1000,kilobytes,6269.9921875
+200000,Compressed Vector Downsampler - EveryNthDownsampler - No Compression - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - EveryNthDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - LTTBDownsampler - No Compression - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - LTTBDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - M4Downsampler - No Compression - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - M4Downsampler - dac_vector - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - M4Downsampler - enc_vector_comma_2 - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - M4Downsampler - enc_vector_elias_delta - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - M4Downsampler - enc_vector_elias_gamma - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - M4Downsampler - enc_vector_fibonacci - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_comma_2 - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_elias_delta - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_elias_gamma - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_fibonacci - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - MinMaxDownsampler - No Compression - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - MinMaxDownsampler - dac_vector - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_comma_2 - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_elias_delta - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_elias_gamma - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_fibonacci - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_comma_2 - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_elias_delta - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_fibonacci - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - No Compression - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_fibonacci - 1000,kilobytes,49.4970703125
+200000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - NaNM4Downsampler - No Compression - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - NaNM4Downsampler - dac_vector - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_comma_2 - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_elias_delta - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_elias_gamma - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_fibonacci - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_comma_2 - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_elias_delta - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_elias_gamma - 1000,kilobytes,12.8525390625
+200000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_fibonacci - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - NaNMinMaxDownsampler - No Compression - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - NaNMinMaxDownsampler - dac_vector - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_comma_2 - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_elias_delta - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_elias_gamma - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_fibonacci - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_comma_2 - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_elias_delta - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_fibonacci - 1000,kilobytes,12.5078125
+200000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - No Compression - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.5634765625
+200000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.0478515625
+200000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+200000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+200000,Original Data,kilobytes,1564.8330078125
+200000,TS Downsample - EveryNthDownsampler - 1000,kilobytes,33.552734375
+200000,TS Downsample - LTTBDownsampler - 1000,kilobytes,33.552734375
+200000,TS Downsample - M4Downsampler - 1000,kilobytes,14.927734375
+200000,TS Downsample - MinMaxDownsampler - 1000,kilobytes,12.802734375
+200000,TS Downsample - MinMaxLTTBDownsampler - 1000,kilobytes,33.552734375
+200000,TS Downsample - NaNM4Downsampler - 1000,kilobytes,14.927734375
+200000,TS Downsample - NaNMinMaxDownsampler - 1000,kilobytes,12.802734375
+200000,TS Downsample - NaNMinMaxLTTBDownsampler - 1000,kilobytes,33.552734375
+300000,Compressed Vector - No Compression - 1000,kilobytes,9375.2744140625
+300000,Compressed Vector - dac_vector - 1000,kilobytes,9401.130859375
+300000,Compressed Vector - enc_vector_comma_2 - 1000,kilobytes,9420.5703125
+300000,Compressed Vector - enc_vector_elias_delta - 1000,kilobytes,9422.1611328125
+300000,Compressed Vector - enc_vector_elias_gamma - 1000,kilobytes,9451.9140625
+300000,Compressed Vector - enc_vector_fibonacci - 1000,kilobytes,9440.1240234375
+300000,Compressed Vector - vlc_vector_comma_2 - 1000,kilobytes,9401.576171875
+300000,Compressed Vector - vlc_vector_elias_delta - 1000,kilobytes,9401.130859375
+300000,Compressed Vector - vlc_vector_elias_gamma - 1000,kilobytes,9394.9921875
+300000,Compressed Vector - vlc_vector_fibonacci - 1000,kilobytes,9394.9921875
+300000,Compressed Vector Downsampler - EveryNthDownsampler - No Compression - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - EveryNthDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - LTTBDownsampler - No Compression - 1000,kilobytes,31.0478515625
+300000,Compressed Vector Downsampler - LTTBDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - M4Downsampler - No Compression - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - M4Downsampler - dac_vector - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - M4Downsampler - enc_vector_comma_2 - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - M4Downsampler - enc_vector_elias_delta - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - M4Downsampler - enc_vector_elias_gamma - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - M4Downsampler - enc_vector_fibonacci - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_comma_2 - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_elias_delta - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_elias_gamma - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_fibonacci - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - MinMaxDownsampler - No Compression - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - MinMaxDownsampler - dac_vector - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_comma_2 - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_elias_delta - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_elias_gamma - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_fibonacci - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_comma_2 - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_elias_delta - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_fibonacci - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - No Compression - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,57.7236328125
+300000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - NaNM4Downsampler - No Compression - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - NaNM4Downsampler - dac_vector - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_comma_2 - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_elias_delta - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_elias_gamma - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_fibonacci - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_comma_2 - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_elias_delta - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_elias_gamma - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_fibonacci - 1000,kilobytes,16.2275390625
+300000,Compressed Vector Downsampler - NaNMinMaxDownsampler - No Compression - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - NaNMinMaxDownsampler - dac_vector - 1000,kilobytes,12.9853515625
+300000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_comma_2 - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_elias_delta - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_elias_gamma - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_fibonacci - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_comma_2 - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_elias_delta - 1000,kilobytes,12.9853515625
+300000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_fibonacci - 1000,kilobytes,13.4150390625
+300000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - No Compression - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+300000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+300000,Original Data,kilobytes,2346.0830078125
+300000,TS Downsample - EveryNthDownsampler - 1000,kilobytes,33.552734375
+300000,TS Downsample - LTTBDownsampler - 1000,kilobytes,33.552734375
+300000,TS Downsample - M4Downsampler - 1000,kilobytes,18.302734375
+300000,TS Downsample - MinMaxDownsampler - 1000,kilobytes,15.490234375
+300000,TS Downsample - MinMaxLTTBDownsampler - 1000,kilobytes,33.552734375
+300000,TS Downsample - NaNM4Downsampler - 1000,kilobytes,18.302734375
+300000,TS Downsample - NaNMinMaxDownsampler - 1000,kilobytes,15.490234375
+300000,TS Downsample - NaNMinMaxLTTBDownsampler - 1000,kilobytes,33.552734375
+50000,Compressed Vector - No Compression - 1000,kilobytes,1562.7744140625
+50000,Compressed Vector - dac_vector - 1000,kilobytes,1562.7744140625
+50000,Compressed Vector - enc_vector_comma_2 - 1000,kilobytes,1562.7744140625
+50000,Compressed Vector - enc_vector_elias_delta - 1000,kilobytes,1582.4921875
+50000,Compressed Vector - enc_vector_elias_gamma - 1000,kilobytes,1562.2978515625
+50000,Compressed Vector - enc_vector_fibonacci - 1000,kilobytes,1562.7744140625
+50000,Compressed Vector - vlc_vector_comma_2 - 1000,kilobytes,1562.7744140625
+50000,Compressed Vector - vlc_vector_elias_delta - 1000,kilobytes,1562.7744140625
+50000,Compressed Vector - vlc_vector_elias_gamma - 1000,kilobytes,1562.7744140625
+50000,Compressed Vector - vlc_vector_fibonacci - 1000,kilobytes,1562.7744140625
+50000,Compressed Vector Downsampler - EveryNthDownsampler - No Compression - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - EveryNthDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - EveryNthDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - EveryNthDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - LTTBDownsampler - No Compression - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - LTTBDownsampler - dac_vector - 1000,kilobytes,31.0478515625
+50000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - LTTBDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - LTTBDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - M4Downsampler - No Compression - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - M4Downsampler - dac_vector - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - M4Downsampler - enc_vector_comma_2 - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - M4Downsampler - enc_vector_elias_delta - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - M4Downsampler - enc_vector_elias_gamma - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - M4Downsampler - enc_vector_fibonacci - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_comma_2 - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_elias_delta - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_elias_gamma - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - M4Downsampler - vlc_vector_fibonacci - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - MinMaxDownsampler - No Compression - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - MinMaxDownsampler - dac_vector - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_comma_2 - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_elias_delta - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_elias_gamma - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - MinMaxDownsampler - enc_vector_fibonacci - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_comma_2 - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_elias_delta - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - MinMaxDownsampler - vlc_vector_fibonacci - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - No Compression - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - MinMaxLTTBDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - NaNM4Downsampler - No Compression - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - NaNM4Downsampler - dac_vector - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_comma_2 - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_elias_delta - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_elias_gamma - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - NaNM4Downsampler - enc_vector_fibonacci - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_comma_2 - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_elias_delta - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_elias_gamma - 1000,kilobytes,18.6728515625
+50000,Compressed Vector Downsampler - NaNM4Downsampler - vlc_vector_fibonacci - 1000,kilobytes,19.1025390625
+50000,Compressed Vector Downsampler - NaNMinMaxDownsampler - No Compression - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - NaNMinMaxDownsampler - dac_vector - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_comma_2 - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_elias_delta - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_elias_gamma - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - NaNMinMaxDownsampler - enc_vector_fibonacci - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_comma_2 - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_elias_delta - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - NaNMinMaxDownsampler - vlc_vector_fibonacci - 1000,kilobytes,18.6650390625
+50000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - No Compression - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - dac_vector - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_comma_2 - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_elias_delta - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - enc_vector_fibonacci - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_comma_2 - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_elias_delta - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_elias_gamma - 1000,kilobytes,31.4775390625
+50000,Compressed Vector Downsampler - NaNMinMaxLTTBDownsampler - vlc_vector_fibonacci - 1000,kilobytes,31.4775390625
+50000,Original Data,kilobytes,392.7861328125
+50000,TS Downsample - EveryNthDownsampler - 1000,kilobytes,33.552734375
+50000,TS Downsample - LTTBDownsampler - 1000,kilobytes,33.552734375
+50000,TS Downsample - M4Downsampler - 1000,kilobytes,21.177734375
+50000,TS Downsample - MinMaxDownsampler - 1000,kilobytes,20.740234375
+50000,TS Downsample - MinMaxLTTBDownsampler - 1000,kilobytes,33.552734375
+50000,TS Downsample - NaNM4Downsampler - 1000,kilobytes,21.177734375
+50000,TS Downsample - NaNMinMaxDownsampler - 1000,kilobytes,20.740234375
+50000,TS Downsample - NaNMinMaxLTTBDownsampler - 1000,kilobytes,33.552734375
